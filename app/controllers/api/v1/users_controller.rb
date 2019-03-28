@@ -1,0 +1,24 @@
+class Api::v1::UsersController < ApplicationController
+  def index
+    render json: Users.all
+  end
+
+  def create
+    user = users.create(user_params)
+    render json: user
+  end
+
+  def destroy
+    User.destroy(params[:id])
+  end
+  def update
+    user = User.find(params[:id])
+    user.update_attributes(user_params)
+    render json: user
+  end
+
+  private
+  def user_params
+    params.requre(:user).permit(:id, :name, :description)
+  end 
+end 
