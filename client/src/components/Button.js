@@ -22,10 +22,18 @@ const buttons = ({ actions that it needs }) =>
 
       <button 
         type="button"
-        onClick={() => load form }
+        onClick={() => api call to load form for logging in.signing in}
         className={for styling}
         />
-        Register
+        Login
+      </button>
+
+      <button 
+        type="button"
+        onClick={() => load the about file  }
+        className={for styling}
+        />
+        About
       </button>
   </div>
 
