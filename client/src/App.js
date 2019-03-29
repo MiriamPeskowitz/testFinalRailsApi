@@ -7,14 +7,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
-      </div>
-      
-      <div className="App">
         <header className="App-header">
           <p>
             Mourning
           </p>
+           <NavBar />
           {/*<a code for links 
             className="App-link"
             href="https://reactjs.org"

@@ -1,6 +1,8 @@
 import { createStore } from 'redux';
 import reducer from '../reducers';
 
-export default const store = createStore(store )
+const initialState = '';
+export const store = createStore(reducer, initialState);
 
 // is this syntax right? 
+export default store;
