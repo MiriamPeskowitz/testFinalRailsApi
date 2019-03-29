@@ -1,4 +1,4 @@
-class Api::v1::EntriesController < ApplicationController
+class Api::V1::EntriesController < ApplicationController
   
 
   def index

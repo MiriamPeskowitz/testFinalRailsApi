@@ -1,2 +1,2 @@
-class UserMailer < ApplicationMailer
-end
+# class UserMailer < ApplicationMailer
+# end

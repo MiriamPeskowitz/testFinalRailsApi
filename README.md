@@ -2,7 +2,25 @@
 
 #Test Api to Prepare for Final Project 
 
+#issues
+Should there be two models: user and entry, or should the user model have an attribute that is entries
+(id: 17)
+name: Rob
+description: "I am glad to be here"
+entries: {
+  (id: x)
+  title: "Tuesday",
+  content: "Good to be here",
+  public: "yes"
+  user_id: 17
+  }
+This would definitely be the object, and the way to set up a form, but would the data still be kept in two separate models, I'm thinking? 
 
+Also, why does http://localhost:3001/api/v1/users/18/entries.json
+get an error, if the route shows up in rake routes? 
+
+After setting up the API, how to start with the front end? 
+  
 
 #User Stories
 

@@ -1,6 +1,7 @@
-class Api::v1::UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
+
   def index
-    render json: Users.all
+    render json: User.all
   end
 
   def create
@@ -11,6 +12,7 @@ class Api::v1::UsersController < ApplicationController
   def destroy
     User.destroy(params[:id])
   end
+  
   def update
     user = User.find(params[:id])
     user.update_attributes(user_params)
