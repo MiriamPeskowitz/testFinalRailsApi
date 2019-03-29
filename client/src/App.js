@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import store from './store/index.js';
+import NavBar from './containers/NavBarContainer';
+//   './navbarContainer'
 class App extends Component {
   render() {
     return (
+      <div>
+        <NavBar />
+      </div>
+      
       <div className="App">
         <header className="App-header">
           <p>
-            Final Project
+            Mourning
           </p>
           {/*<a code for links 
             className="App-link"
