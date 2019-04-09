@@ -1,1 +1,1 @@
-Will import the components needed for content -- the entries 
+// Will import the components needed for content -- the entries 

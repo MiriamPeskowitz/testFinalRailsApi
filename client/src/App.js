@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
 import './App.css';
-import store from './store/index.js';
-import NavBar from './containers/NavBarContainer';
-//   './navbarContainer'
+// import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
+import Content from './containers/Content';
+import Navbar from './containers/Navbar';
+// import Home from './components/Home';
+import { simpleAction } from './actions/simpleAction';
+
+
 class App extends Component {
+  //componentDidMount() {}
+
   render() {
     return (
       <div>
-        <header className="App-header">
-          <p>
-            Mourning
-          </p>
-           <NavBar />
-          {/*<a code for links 
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>*/}
-        </header>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Mourning/Together</h1>
+              <Navbar />
+          </header>
+          <Content />
+        </div>
+
+       {/* <Router>
+          <React.Fragment>
+            <Route path='/' component={Home} />
+            <Route exact path='/all' component={AllEntries} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+
+          </React.Fragment>
+        </Router> */}
       </div>
     );
-  }
-}
+  };
+};
 
-export default App;
+const mapStateToProps = (state) => ({
+    ...state
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  simpleAction: () => dispatch(simpleAction())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
