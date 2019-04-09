@@ -17,21 +17,11 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Mourning/Together</h1>
-              <Navbar />
+            
           </header>
-          <Content />
+    
         </div>
 
-       {/* <Router>
-          <React.Fragment>
-            <Route path='/' component={Home} />
-            <Route exact path='/all' component={AllEntries} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={Signup} />
-
-          </React.Fragment>
-        </Router> */}
       </div>
     );
   };
@@ -47,3 +37,16 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 
+
+
+
+       {/* <Router>
+          <React.Fragment>
+            <Route path='/' component={Home} />
+            <Route exact path='/all' component={AllEntries} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+
+          </React.Fragment>
+        </Router> */}
