@@ -11,3 +11,4 @@ class AllEntries extends React.Component {
   }
 }
 export default AllEntries;
+//this will have to pull each entry from another component 

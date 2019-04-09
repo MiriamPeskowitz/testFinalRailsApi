@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
+import routes from './routes';
 import { connect } from 'react-redux';
 import Content from './containers/Content';
 import Navbar from './containers/Navbar';
@@ -26,7 +26,7 @@ class App extends Component {
     );
   };
 };
-
+//this was for the simple setup -- move to 
 const mapStateToProps = (state) => ({
     ...state
 })
@@ -39,14 +39,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 
 
-
-       {/* <Router>
-          <React.Fragment>
-            <Route path='/' component={Home} />
-            <Route exact path='/all' component={AllEntries} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={Signup} />
-
-          </React.Fragment>
-        </Router> */}
