@@ -1,27 +1,62 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'; 
 import Home from './components/Home';
 import AllEntries from './components/AllEntries';
+
+
+const link = {
+  width: '100px',
+  padding: '2px',
+  margin: '0 2px 2px',
+  textDecoration: 'none',
+  color: 'white'
+}
+
+const noBullets = {
+  listStyle: 'none'
+}
 
 function AppRouter() {
   return(
     <Router>
       <div>
         <nav>
-          <ul>
+          <ul style={ noBullets }>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink 
+                to="/"
+                exact
+                style={link}
+                activeStyle={{ background: 'darkblue'}}
+                >Home</NavLink>
+            </li>
+            
+            <li>
+              <NavLink 
+                to="/entries/"
+                exact
+                style={link}
+                activeStyle={{background: 'darkblue'}}
+              >Entries</NavLink>
+            </li>
+            
+            <li>
+              <NavLink
+                to="/about/"
+                exact
+                style={link}
+                activeStyle={{background: 'darkblue'}}
+               >About</NavLink>
             </li>
             <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
-              <Link to="/users/">Users</Link>
-            </li>
-            <li>
-              <Link to="/entries/">Entries</Link>
-            </li>
+              <NavLink 
+                to="/users/"
+                exact
+                style={link}
+                activeStyle={{background: 'darkblue'}}
+                >Users</NavLink>
+            </li>  
           </ul>
         </nav>
         <Route path='/' component={Home} />

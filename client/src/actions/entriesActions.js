@@ -5,12 +5,12 @@ const baseForEntries =  'http://localhost:3001/api/v1/entries.json';
 export function fetchAllEntries() {
   return (dispatch) => {
     dispatch({
-      type: "LOADING_ENTRIES"
+      type: 'LOADING_ENTRIES'
     });
-    return fetch(base)
+    return fetch(baseForEntries)
     .then(response => response.json())
     .then(entries => dispatch({
-      type: FETCH_ALL_ENTRIES, payload: entries
+      type: 'FETCH_ALL_ENTRIES', payload: entries
     }))
   }
 }
