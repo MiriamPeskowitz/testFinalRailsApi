@@ -2,6 +2,10 @@
 import React from 'react';
 
 class AllEntries extends React.Component {
+  componentDidMount() {
+   this.props.fetchAllEntries()
+  };  
+
   render() {
     return (
       <div>
@@ -10,5 +14,9 @@ class AllEntries extends React.Component {
     )
   }
 }
+
+
+
 export default AllEntries;
 //this will have to pull each entry from another component 
+

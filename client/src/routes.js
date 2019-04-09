@@ -7,10 +7,11 @@ import AllEntries from './components/AllEntries';
 
 const link = {
   width: '100px',
-  padding: '2px',
-  margin: '0 2px 2px',
+  padding: '0px',
+  margin: '0 0px 0px',
   textDecoration: 'none',
   color: 'white'
+
 }
 
 const noBullets = {
@@ -28,16 +29,16 @@ function AppRouter() {
                 to="/"
                 exact
                 style={link}
-                activeStyle={{ background: 'darkblue'}}
+                activeStyle={{ background: 'royalBlue'}}
                 >Home</NavLink>
             </li>
-            
+
             <li>
               <NavLink 
                 to="/entries/"
                 exact
                 style={link}
-                activeStyle={{background: 'darkblue'}}
+                activeStyle={{background: 'IndianRed'}}
               >Entries</NavLink>
             </li>
             
@@ -46,7 +47,7 @@ function AppRouter() {
                 to="/about/"
                 exact
                 style={link}
-                activeStyle={{background: 'darkblue'}}
+                activeStyle={{background: ' #e69500'}}
                >About</NavLink>
             </li>
             <li>
@@ -54,11 +55,12 @@ function AppRouter() {
                 to="/users/"
                 exact
                 style={link}
-                activeStyle={{background: 'darkblue'}}
+                activeStyle={{background: 'violet'}}
                 >Users</NavLink>
             </li>  
           </ul>
         </nav>
+        
         <Route path='/' component={Home} />
         <Route exact path='/all' component={AllEntries} />
           {/*  <Route exact path='/about' component={About} */}/>
