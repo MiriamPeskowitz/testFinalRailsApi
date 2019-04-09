@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import routes from './routes';
+import AppRouter from './routes';
 import { connect } from 'react-redux';
 import Content from './containers/Content';
 import Navbar from './containers/Navbar';
@@ -16,12 +16,9 @@ class App extends Component {
       <div>
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Mourning/Together</h1>
-            
+            <AppRouter/> 
           </header>
-    
         </div>
-
       </div>
     );
   };
