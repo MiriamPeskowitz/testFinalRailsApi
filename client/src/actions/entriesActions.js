@@ -10,7 +10,7 @@ export function fetchAllEntries() {
     return fetch(baseForEntries)
     .then(response => response.json())
     .then(entries => dispatch({
-      type: 'FETCH_ALL_ENTRIES', payload: entries
+      type: 'FETCH_ALL_ENTRIES', payload: entries.content
     }))
   }
 }

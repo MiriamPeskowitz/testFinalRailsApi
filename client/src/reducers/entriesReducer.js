@@ -9,10 +9,10 @@ export default function entries_reducer(
     case "LOADING_ENTRIES":
       return [...state, { loading: true }];
 
-    case: "FETCH_ALL_ENTRIES":
+    case "FETCH_ALL_ENTRIES":
       return {
         loading: false,
-        entris: action.payload
+        entries: action.payload
       };
     default: 
       return state;  
