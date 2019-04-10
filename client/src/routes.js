@@ -7,12 +7,13 @@ import Home from './components/Home';
 import About from './components/About';
 import AllEntries from './components/AllEntries';
 import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 const link = {
   width: '100px',
   padding: '0px',
-  margin: '0 0px 0px',
+  margin: '2px 2px 2px',
   textDecoration: 'none',
   color: 'white'
 }
@@ -47,19 +48,25 @@ function AppRouter() {
 
             <li>
               <NavLink 
+                to="/signup"
+                exact
+                style={link}
+                activeStyle={{background: 'violet'}}
+                >Signup</NavLink> or <NavLink 
                 to="/login"
                 exact
                 style={link}
                 activeStyle={{background: 'violet'}}
-                >Login</NavLink>
+                >Login</NavLink> 
             </li>  
- 
+
             <li>
               <NavLink 
                 to="/entries"
                 exact
                 style={link}
-                activeStyle={{background: 'IndianRed'}}
+                activeStyle={{background: '#cd5c5c'}}
+
               >Entries</NavLink>
             </li>
             
@@ -70,10 +77,13 @@ function AppRouter() {
         <Route exact path='/entries' component={AllEntries} />
         <Route exact path='/about' component={About} />
         <Route exact path='/login' component={Login} />
-            {/*<Route exact path='/signup' component={Signup} />*/}
+        <Route exact path='/signup' component={Signup} />
+        {/*add find, and add NavLink for find a user /search */}
       </div>
     </Router> 
      
   )
 }
 export default AppRouter
+
+// add     //add onClick -- // to NavLink for entries, that calls somewhere? 

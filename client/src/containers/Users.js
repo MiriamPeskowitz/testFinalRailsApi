@@ -27,3 +27,43 @@
 // export default Navbar;
 
 
+//Wednsday: should this container be the sign in? if so, change name from navbar to users ,make actions for login, etc, and for CRUD for entries 
+
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+// import  {  } from '../actions/entriesActions';
+
+class Users extends Component {
+
+  componentWillMount() {
+      // fetchAllEntries();
+  };
+
+  render() {
+    return (
+      <div>
+        <Signup />
+        <Login />
+        <FindUser />
+      </div>
+    )
+  }
+}
+ 
+const mapStateToProps = state => {
+  return {
+    // users: state.users
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  // fetchAllEntries
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users); 
+
+
+ 
+
+

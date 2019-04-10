@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AppRouter from './routes';
 import Content from './containers/Content';
-// import Home from './components/Home';
+// import Users from './components/Users';
 
 class App extends Component {
   //componentDidMount() {}
@@ -24,6 +24,7 @@ class App extends Component {
 };
 
 export default App;
+
 // //this was for the simple setup -- to make sure everything was wired correctly -- move to 
 // const mapStateToProps = (state) => ({
 //     ...state

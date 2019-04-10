@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Entry from './Entry';
 
  const red = {
-    color: 'IndianRed'
+    color: '#cd5c5c'
   }
 
 class AllEntries extends Component {
@@ -15,7 +15,7 @@ class AllEntries extends Component {
     
     const { entries } = this.props;
 
-    const entriesList = () => {
+    const entriesList = (entries) => {
       entries.map(entry => {
         return (
           <Entry

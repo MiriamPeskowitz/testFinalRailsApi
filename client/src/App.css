@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: right;
 }
 
 .App-header {
@@ -17,3 +17,6 @@
   color: #61dafb;
 }
 
+p {
+  margin-right: 20px;
+}
