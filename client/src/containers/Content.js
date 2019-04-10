@@ -4,13 +4,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import  { fetchAllEntries } from '../actions/entriesActions';
+
 import Home from '../components/Home';
 import AllEntries from '../components/AllEntries';
 import About from '../components/About';
+
+
 class Content extends Component {
 
-  componentWillMount() {
-      fetchAllEntries();
+  componentDidMount() {
+    this.props.fetchAllEntries();
   };
 
 
@@ -25,6 +28,7 @@ class Content extends Component {
   }
 }
  
+
 const mapStateToProps = state => {
   return {
     entries: state.entries
@@ -36,7 +40,6 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content); 
-
 
 
 

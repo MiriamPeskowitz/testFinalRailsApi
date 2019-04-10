@@ -5,13 +5,14 @@ export default function entriesReducer(
     loading: false,
     entries: []
   }, action) {
-
+console.log("got to action.type")
   switch(action.type) {
-
+  
     case "LOADING_ENTRIES":
-      return [...state, { loading: true }];
+      return {...state,  loading: true };
 
     case "FETCH_ALL_ENTRIES":
+      console.log("got to fetch all entries")
       return {
         loading: false,
         entries: action.payload

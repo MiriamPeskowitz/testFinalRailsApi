@@ -14,9 +14,9 @@ class App extends Component {
           <header className="App-header">
             <AppRouter /> 
           </header>
-{/*          <section>
+          <section>
             <Content />
-          </section>*/}
+          </section>
         </div>
       </div>
     );

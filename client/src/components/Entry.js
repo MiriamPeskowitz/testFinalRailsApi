@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Entry extends Component {
-
-  render() {
-    return (
+const Entry = props => {
+  return (
     <div>
       <li key={this.props.entry.id}>
         <h3>{ this.props.entry.title }</h3>
@@ -12,7 +10,7 @@ class Entry extends Component {
     </div>
     )
   }
-}
+  
 export default Entry;
 
  //if (entry.public === "yes") {

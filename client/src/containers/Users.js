@@ -30,38 +30,69 @@
 //Wednsday: should this container be the sign in? if so, change name from navbar to users ,make actions for login, etc, and for CRUD for entries 
 
 
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import  {  } from '../actions/entriesActions';
+// import React, { Component } from 'react';
+// import { connect } from 'react-redux';
+// // import  {  } from '../actions/entriesActions';
 
-class Users extends Component {
+// class Users extends Component {
 
-  componentWillMount() {
-      // fetchAllEntries();
-  };
+//   componentWillMount() {
+//       // fetchAllEntries();
+//   };
 
-  render() {
-    return (
-      <div>
-        <Signup />
-        <Login />
-        <FindUser />
-      </div>
-    )
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         <Signup />
+//         <Login />
+//         <FindUser />
+//       </div>
+//     )
+//   }
+// }
  
-const mapStateToProps = state => {
-  return {
-    // users: state.users
-  }
-}
 
-const mapDispatchToProps = dispatch => ({
-  // fetchAllEntries
-})
+// import React, { Component } from 'react';
+// import { connect } from 'react-redux';
+// import { login } from './reducers/rootReducer';
+// import Login from 'components/Login';
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users); 
+// Class Users extends Component {
+
+//   constructor(props) {
+//     super(props);
+//     this.state = {};
+
+//     this.onSubmit = this.onSubmit.bind(this);
+//   }
+//   render() {
+//     let {email, password } = this.state; 
+//     let (isLoginPending, isLoginSuccess, loginError) = this.props;
+//     return (
+//        <Login onSubmit={this.onSubmit} />
+
+//       )
+//   }
+ 
+
+// }
+
+// const mapStateToProps = state => {
+//   return {
+//     isLoginPending: state.isLoginPending,
+//     isLoginSuccessful: state.isLoginSuccessful, 
+//     loginError: state.LoginError
+//     // users: state.users
+//   };
+// }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     login: (email, password) => dispatch(login(email, password))
+//   };
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Users); 
 
 
  

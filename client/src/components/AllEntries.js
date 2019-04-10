@@ -3,42 +3,31 @@
 
 import React, { Component } from 'react';
 import Entry from './Entry';
+import  { fetchAllEntries } from '../actions/entriesActions';
+
+
+class AllEntries extends Component {
 
  const red = {
     color: '#cd5c5c'
   }
+ const onClick(e) {
+  e.preventDefault()
+  this.fetchAllEntries()
+  console.log("got to fetchallentries")
+ }
 
-class AllEntries extends Component {
- 
-
-  render() {
-    
-    const { entries } = this.props;
-
-    const entriesList = (entries) => {
-      entries.map(entry => {
-        return (
-          <Entry
-            key={entry.id}
-            title = {entry.title}
-            content = {entry.content}
-            />
-        )
-      });
-    }
-
-    return(
-      <div>
-        <h2 style={red}> Entries</h2>
-        <ul>
-          { entriesList }
-        </ul>
-      </div> 
-
+  listEntries = () => this.props.entries.map((entry, id, content, title) => <Entry key={id}  title = {title}  content = {content} />)
+    render() {     
+      return(
+        <div>
+          <h2 style={red} onCLick ={ this.onClick } > Entries</h2>
+          <ul>
+            { this.listEntries }
+          </ul>
+        </div> 
     )
   }
 }
 
 export default AllEntries;
-
-//component: has a form to list the entries, in batch of ten EntriesList

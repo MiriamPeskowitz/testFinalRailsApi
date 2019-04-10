@@ -18,6 +18,7 @@ This would definitely be the object, and the way to set up a form, but would the
 
 Also, why does http://localhost:3001/api/v1/users/18/entries.json
 get an error, if the route shows up in rake routes? 
+    error is load_interlock (Def: Execute the supplied block while holding an exclusive lock, preventing any other thread from being inside a run_interlock block at the same time.)
 
 After setting up the API, how to start with the front end? 
   
@@ -34,6 +35,7 @@ A user can enter an email (authentication is a later phase)
 
 An entry can be seen only on a user's page, or in the general feed (if public).
  
+For MVP, just add an antry. 
 
 A user can see a general feed of entries, creating an immediate sense of being surrounded by people who understand and care. This feed is an API from the class/model Entries (index/displayed in react)
 
