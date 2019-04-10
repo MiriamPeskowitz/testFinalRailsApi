@@ -2,15 +2,6 @@
 
 import React from 'react';
 
-
-// const link = {
-//   width: '100px',
-//   padding: '0px',
-//   margin: '0 0px 0px',
-//   textDecoration: 'none',
-//   color: 'white'
-
-// }
 const about = {
   padding: '10px',
   margin: '20px'

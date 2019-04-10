@@ -15,10 +15,9 @@ const link = {
   margin: '0 0px 0px',
   textDecoration: 'none',
   color: 'white'
-
 }
 
-const noBullets = {
+const listStyle = {
   listStyle: 'none'
 }
 
@@ -27,7 +26,7 @@ function AppRouter() {
     <Router>
       <div>
         <nav>
-          <ul style={ noBullets }>
+          <ul style={ listStyle }>
             <li>
               <NavLink 
                 to="/"
@@ -38,15 +37,6 @@ function AppRouter() {
             </li>
 
             <li>
-              <NavLink 
-                to="/entries"
-                exact
-                style={link}
-                activeStyle={{background: 'IndianRed'}}
-              >Entries</NavLink>
-            </li>
-            
-            <li>
               <NavLink
                 to="/about"
                 exact
@@ -54,6 +44,7 @@ function AppRouter() {
                 activeStyle={{background: '#e69500'}}
                >About</NavLink>
             </li>
+
             <li>
               <NavLink 
                 to="/login"
@@ -62,6 +53,16 @@ function AppRouter() {
                 activeStyle={{background: 'violet'}}
                 >Login</NavLink>
             </li>  
+ 
+            <li>
+              <NavLink 
+                to="/entries"
+                exact
+                style={link}
+                activeStyle={{background: 'IndianRed'}}
+              >Entries</NavLink>
+            </li>
+            
           </ul>
         </nav>
 
@@ -70,8 +71,7 @@ function AppRouter() {
         <Route exact path='/about' component={About} />
         <Route exact path='/login' component={Login} />
             {/*<Route exact path='/signup' component={Signup} />*/}
-}
-*/}   </div>
+      </div>
     </Router> 
      
   )

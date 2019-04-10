@@ -1,4 +1,6 @@
-export default function entries_reducer(
+
+
+export default function entriesReducer(
   state = {
     loading: false,
     entries: []
@@ -14,8 +16,11 @@ export default function entries_reducer(
         loading: false,
         entries: action.payload
       };
+      
     default: 
       return state;  
   }
 };
+
+// add 'CREATE_ENTRY'  'UPDATE_ENTRY' 'DELETE_ENTRY'
   
