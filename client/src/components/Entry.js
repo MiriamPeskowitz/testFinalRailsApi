@@ -6,12 +6,12 @@ class Entry extends Component {
       <div>
         <li>
           {this.props.entry.title}
-          //add content 
+        
         </li>
        </div> 
       )
   }
-}
+}  //add content 
 
 // const Entry = (entry: {id, title, content})  =>  {
 //     <div key={id}>

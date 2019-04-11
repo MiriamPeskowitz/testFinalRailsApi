@@ -3,7 +3,7 @@ import Entry from './Entry';
 
 class Entries extends Component {
   render() {
-    const {entries: {id, title, content}} = this.props;
+    const {entries} = this.props;
 
     const entriesList = entries.map((entry) => {
       return (

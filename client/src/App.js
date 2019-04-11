@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import AppRouter from './routes';
-import AllEntries from './containers/AllEntries';
+import EntriesContainer from './containers/EntriesContainer';
 
 class App extends Component {
-
 
   render() {
     return (
@@ -14,7 +13,7 @@ class App extends Component {
             <AppRouter />
           </header>
           <section>
-            <AllEntries/>
+            <EntriesContainer/>
           </section>
         </div>
       </div>

@@ -5,7 +5,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'; 
 import Home from './components/Home';
 import Story from './components/Story';
-import AllEntries from './containers/AllEntries';
+import EntriesContainer from './containers/EntriesContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 
@@ -70,7 +70,7 @@ function AppRouter() {
           </ul>
         </nav>
         <Route path='/' component={Home} />
-        <Route exact path='/entries' component={AllEntries} />
+        <Route exact path='/entries' component={EntriesContainer} />
         <Route exact path='/story' component={Story} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />

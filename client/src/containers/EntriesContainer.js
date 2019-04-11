@@ -6,36 +6,52 @@ import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 
 // import Entry from '../components/Entry';
-import EntryList from '../components/EntryList'
-import EntryInput from '../components/EntryInput'
+import Entries from '../components/Entries'
+// import EntryInput from '../components/EntryInput'
 import  { fetchAllEntries } from '../actions/entriesActions';
 
 
 class EntriesContainer extends Component {
-  constructor() {
-    super();
+  // constructor() {
+  //   super();
 
-    // this.onClick = this.onClick.bind(this);
-  }
-  
-  // componentWillMount() {
-  //   console.log('in CWM')
-  //   this.props.fetchAllEntries()
+  //   // this.onClick = this.onClick.bind(this);
   // }
+  
+  componentWillMount() {
+    console.log('in CWM')
+    this.props.fetchAllEntries()
+    console.log('Entries', this.props.entries)
+  }
 
   render() {  
-    // const { entries, fetchAllEntries } = this.props;
+    const { entries } = this.props;
     return (
       <div>
-        <EntryInput/ >
-        //to EntryInput will add addEntry={this.props.addEntry}
+        <h2> Entries </h2>
+    {/*    <EntryInput/>*/}
         <Entries
-          entries={this.props.entries}
+          entries={entries}
         />
       </div>
     );
   }
  }  
+
+const mapStateToProps = state => {
+  return {
+    entries: state.entriesReducer.entries
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  fetchAllEntries
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
+
+         //to EntryInput will add addEntry={this.props.addEntry}
+
     // const red = {
     //   color: '#cd5c5c'
     // }   
@@ -51,15 +67,3 @@ class EntriesContainer extends Component {
 // }
 
 // onClick={this.onClick}
-const mapStateToProps = state => {
-  return {
-    entries: state.entriesReducer.entries
-  }
-}
-
-const mapDispatchToProps = dispatch => ({
-  fetchAllEntries
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
-
