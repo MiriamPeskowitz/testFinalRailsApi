@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import AppRouter from './routes';
-import Content from './containers/Content';
+import AllEntries from './containers/AllEntries';
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
             <AppRouter />
           </header>
           <section>
-            <Content />
+            <AllEntries/>
           </section>
         </div>
       </div>

@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Entry = props => {
-  return (
-    <div>
-      <li key={this.props.entry.id}>
-        <h3>{ this.props.entry.title }</h3>
-        <p>{ this.props.entry.content }</p>
-      </li>  
-    </div>
-    )
+class Entry extends Component {
+  render() {
+    return (
+      <div>
+        <li>
+          {this.props.entry.title}
+          //add content 
+        </li>
+       </div> 
+      )
   }
+}
+
+// const Entry = (entry: {id, title, content})  =>  {
+//     <div key={id}>
+//       <h2> {title} </h2>
+//       <p> {content} </p>        
+//       {/*
+//       <li key={this.props.entry.id}>
+//         <h3>{ this.props.entry.title }</h3>
+//         <p>{ this.props.entry.content }</p>
+//       </li>  */}
+//     </div>
+// }
   
 export default Entry;
 

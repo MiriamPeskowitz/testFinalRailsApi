@@ -3,10 +3,9 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'; 
-import Content from './containers/Content';
 import Home from './components/Home';
 import Story from './components/Story';
-import AllEntries from './components/AllEntries';
+import AllEntries from './containers/AllEntries';
 import Login from './components/Login';
 import Signup from './components/Signup';
 
