@@ -17,7 +17,7 @@ export function fetchAllEntries(){
     //   type: 'LOADING_ENTRIES',
     //   payload: true
     // });
-    debugger
+
     return fetch(url, data)
     .then(response => response.json())
     .then(entries =>  dispatch({

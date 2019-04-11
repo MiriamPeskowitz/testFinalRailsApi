@@ -3,6 +3,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
 // import { bindActionCreators } from 'redux';
 
 // import Entry from '../components/Entry';
@@ -14,8 +16,7 @@ import  { fetchAllEntries } from '../actions/entriesActions';
 class EntriesContainer extends Component {
   // constructor() {
   //   super();
-
-  //   // this.onClick = this.onClick.bind(this);
+  //   this.onClick = this.onClick.bind(this);
   // }
   
   componentWillMount() {
@@ -28,7 +29,8 @@ class EntriesContainer extends Component {
     const { entries } = this.props;
     return (
       <div>
-        <h2> Entries </h2>
+        <h2>  Entries </h2>
+        {/*<button onClick={this.onClick}>Click to see</button>*/}
     {/*    <EntryInput/>*/}
         <Entries
           entries={entries}
@@ -44,9 +46,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => bindActionCreators({
   fetchAllEntries
-})
+}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
 
