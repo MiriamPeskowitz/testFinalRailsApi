@@ -5,7 +5,7 @@ class Entry extends Component {
     return (
       <div>
         <li>
-          {this.props.entry.title}
+          {this.props.entry}
         
         </li>
        </div> 
