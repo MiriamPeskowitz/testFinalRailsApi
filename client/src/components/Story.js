@@ -1,4 +1,5 @@
 //Can I take the content from here and put it in the backend, api it? Or just leave it here? 
+//static page
 
 import React from 'react';
 
