@@ -5,6 +5,7 @@ import Content from './containers/Content';
 
 class App extends Component {
 
+
   render() {
     return (
       <div>
@@ -13,6 +14,7 @@ class App extends Component {
             <AppRouter />
           </header>
           <section>
+            <Content />
           </section>
         </div>
       </div>
