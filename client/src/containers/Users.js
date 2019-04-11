@@ -1,3 +1,7 @@
+
+
+
+
 // imports NavBar, which imports Button
 //passes props down to button, maybe? Or does it all in one? 
 //iterates through the props? 

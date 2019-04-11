@@ -7,7 +7,7 @@ import  { fetchAllEntries } from '../actions/entriesActions';
 
 import Home from '../components/Home';
 import AllEntries from '../components/AllEntries';
-import About from '../components/About';
+import Story from '../components/Story';
 
 
 class Content extends Component {
@@ -20,9 +20,9 @@ class Content extends Component {
   render() {
     return (
       <div>
-        <Home />
+       {/* <Home />
         <About />
-        <AllEntries />
+        <AllEntries on/>*/}
       </div>
     )
   }

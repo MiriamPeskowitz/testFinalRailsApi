@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 import AppRouter from './routes';
 import Content from './containers/Content';
-// import Users from './components/Users';
 
 class App extends Component {
-  //componentDidMount() {}
+
 
   render() {
     return (
       <div>
         <div className="App">
           <header className="App-header">
-            <AppRouter /> 
+            <AppRouter />
           </header>
           <section>
             <Content />
