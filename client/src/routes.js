@@ -2,8 +2,10 @@
 //sets routes
 
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'; 
-import Content from './containers/Content';
+import { BrowserRouter as Switch, Router, Route, NavLink} from 'react-router-dom'; 
+// import Navbar from './containers/Navbar';
+// import Content from './containers/Content';
+
 import Home from './components/Home';
 import Story from './components/Story';
 import AllEntries from './components/AllEntries';
@@ -19,12 +21,14 @@ const link = {
  }
 
 const listStyle = {
-  listStyle: 'none'
-}
+    listStyle: 'none'
+  }
+
 function AppRouter() {
   return(
     <Router> 
-      <div>      
+      <div>
+        {/*<Navbar/>*/}
         <nav>
           <ul style={ listStyle }>
             <li>
@@ -70,11 +74,11 @@ function AppRouter() {
             </li>
           </ul>
         </nav>
-        <Route path='/' component={Home} />
-        <Route exact path='/entries' component={AllEntries} />
-        <Route exact path='/story' component={Story} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={Signup} />
+            <Route path='/' component={Home} />
+            <Route exact path='/entries' component={AllEntries} />
+            <Route exact path='/story' component={Story} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
       </div>
     </Router>   
   )

@@ -1,3 +1,12 @@
+//login 
+
+// export const login(data) {
+//   return dispatch => {
+//     return fetch post-data to server
+//   }
+// }
+
+
 // const base =  'http://localhost:3001/api/v1/users.json';
 
 // user story: user can signup

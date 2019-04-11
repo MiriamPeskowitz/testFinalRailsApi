@@ -1,5 +1,6 @@
 import React from 'react';
-
+//what's in this component, other than title? 
+//make an entry? 
 class Home extends React.Component {
 
   render() {
@@ -12,3 +13,4 @@ class Home extends React.Component {
 }
 
 export default Home;
+

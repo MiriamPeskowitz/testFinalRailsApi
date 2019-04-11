@@ -28,6 +28,8 @@ class Content extends Component {
   }
 }
  
+ //how do i fix this - maybe the container is really the entries 
+ 
 
 const mapStateToProps = state => {
   return {
