@@ -23,9 +23,9 @@ const EntryForm = () =>
 
       </fieldset>
 
-    <Link to='/entries' style={red}>Cancel</Link>
+    <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
   
   </form>
 
-
+//needs onSubmit -- createEntry
 export default EntryForm;

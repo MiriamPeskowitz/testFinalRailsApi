@@ -28,6 +28,7 @@ class EntryFormContainer extends Component {
 //add onChange and onSubmit 
 
   render() {  
+    <EntryForm/>
     // const { entries } = this.props;
     // return (
     //   <div>

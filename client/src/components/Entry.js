@@ -1,12 +1,12 @@
 import React from 'react';
 
-const align = {
-    textAlign: 'center'
-  }
+// const align = {
+//     textAlign: 'center'
+//   }
 
-const padding = {
-    padding: '40px'
-  }
+// const padding = {
+//     padding: '40px'
+//   }
 
 const Entry = (props) =>  {
   return (

@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom';
 
 import Entries from '../components/Entries'
-import EntryForm from '../components/EntryForm'
+// import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
 
 

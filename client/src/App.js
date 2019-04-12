@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AppRouter from './routes';
-import EntriesContainer from './containers/EntriesContainer';
 import './App.css';
 
 class App extends Component {
