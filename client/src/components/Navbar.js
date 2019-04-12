@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
 const link = {
@@ -13,10 +13,7 @@ const listStyle = {
     listStyle: 'none'
   }
 
-class Navbar extends Component {
-//const Navbar 
-//move to components 
-  render() {
+const Navbar = () => {
       return (
         <nav>
           <ul style={ listStyle }>
@@ -48,7 +45,7 @@ class Navbar extends Component {
                 to="/login"
                 exact
                 style={link}
-                activeStyle={{background: 'violet'}}
+                activeStyle={{background: 'plum'}}
                 >Login</NavLink> 
             </li>  
 
@@ -65,6 +62,5 @@ class Navbar extends Component {
         </nav>
     )
   }
-}
 
 export default Navbar;

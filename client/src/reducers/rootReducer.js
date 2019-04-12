@@ -5,5 +5,6 @@ import usersReducer from './usersReducer';
 export default combineReducers({
   entriesReducer, 
   usersReducer
+  //add entryFormReducer
 });
 

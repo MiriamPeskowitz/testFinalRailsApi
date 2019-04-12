@@ -4,20 +4,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom';
 
-// import { bindActionCreators } from 'redux';
-
-// import Entry from '../components/Entry';
 import Entries from '../components/Entries'
-// import EntryInput from '../components/EntryInput'
+import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
 
 
+
+const red = {
+    color: '#cd5c5c'
+  }
+
 class EntriesContainer extends Component {
-  // constructor() {
-  //   super();
-  //   this.onClick = this.onClick.bind(this);
-  // }
+  constructor() {
+    super();
+    //state
+    this.onClick = this.onClick.bind(this);
+ }
   
   componentWillMount() {
     console.log('in CWM')
@@ -25,15 +29,18 @@ class EntriesContainer extends Component {
     console.log('Entries', this.props.entries)
   }
 
+  onClick(e) {
+    e.preventDefault();
+  }
+
+
   render() {  
     const { entries } = this.props;
     return (
       <div>
-        <h2 style={{color: '#cd5c5c'}}> Entries </h2>
-        {/*<button onClick={this.onClick}>Click to see</button>*/}
-    {/*    <EntryInput/>*/}
+        <h2 style={red}> Entries </h2>
+        <Link to='/entries/new' style={red}> New Entry </Link>
         <Entries entries={entries}/>
-        //limit -- 
       </div>
     );
   }
@@ -50,21 +57,3 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
-
-         //to EntryInput will add addEntry={this.props.addEntry}
-
-    // const red = {
-    //   color: '#cd5c5c'
-    // }   
-//     return(
-//       <div>
-//         <h2 style={color: '#cd5c5c'} > Entries</h2>
-//         <ul>
-//            <EntryList/>
-//         </ul>
-//       </div> 
-//     )
-//   }
-// }
-
-// onClick={this.onClick}

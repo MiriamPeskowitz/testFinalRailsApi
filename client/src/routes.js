@@ -9,6 +9,7 @@ import EntriesContainer from './containers/EntriesContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
+import EntryForm from './components/EntryForm';
 
 function AppRouter() {
   return(
@@ -20,6 +21,8 @@ function AppRouter() {
         <Route exact path='/story' component={Story} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
+        <Route exact path='/entries/new' component={EntryForm} />
+      
       </div>
     </Router>   
   )
