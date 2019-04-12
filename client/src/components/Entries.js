@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Entry from './Entry';
-
-class Entries extends Component {
-  render() {
-    const {entries} = this.props;
+//change to function, doesn't need to be a component, no lc methods or 
+const Entries = (props) => {
+    const {entries} = props;
 
     const entriesList = entries.map((entry) => {
       return (
@@ -14,6 +13,7 @@ class Entries extends Component {
           />
         )
     });
+    
     return(
       <div>
         <ul>
@@ -22,6 +22,5 @@ class Entries extends Component {
       </div>
     );
   }  
-};
 
 export default Entries;

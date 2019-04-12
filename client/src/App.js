@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import AppRouter from './routes';
 import EntriesContainer from './containers/EntriesContainer';
+import './App.css';
 
 class App extends Component {
 
@@ -12,9 +12,6 @@ class App extends Component {
           <header className="App-header">
             <AppRouter />
           </header>
-          <section>
-            <EntriesContainer/>
-          </section>
         </div>
       </div>
     );

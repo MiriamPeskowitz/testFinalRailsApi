@@ -10,7 +10,7 @@ export function fetchAllEntries(){
     }
   }
 
-  const url = 'http://localhost:3001/api/v1/entries';
+  const url = 'http://localhost:3001/api/v1/entries.id';
   
   return dispatch => {
     // dispatch({

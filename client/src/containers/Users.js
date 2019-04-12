@@ -1,3 +1,4 @@
+//if user.password = params.password 
 
 //will b login and signup stuff 
 

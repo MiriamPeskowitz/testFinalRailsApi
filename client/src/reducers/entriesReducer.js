@@ -5,20 +5,20 @@ export default function entriesReducer(
     loading: false,
     entries: []
   }, action) {
-console.log("got to action.type")
+console.log("got to action.type", state)
   switch(action.type) {
   
     // case "LOADING_ENTRIES":
     //   return {...state,  loading: true };
 
     case "FETCH_ALL_ENTRIES":
-      console.log("got to fetch all entries")
+      console.log("got to fetch all entries in reducer")
       return {
         // loading: false,
         ...state, 
         entries: action.payload
       };
-      
+
     default: 
       return state;  
   }

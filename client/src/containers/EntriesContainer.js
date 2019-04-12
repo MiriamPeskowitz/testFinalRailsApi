@@ -29,12 +29,11 @@ class EntriesContainer extends Component {
     const { entries } = this.props;
     return (
       <div>
-        <h2>  Entries </h2>
+        <h2 style={{color: '#cd5c5c'}}> Entries </h2>
         {/*<button onClick={this.onClick}>Click to see</button>*/}
     {/*    <EntryInput/>*/}
-        <Entries
-          entries={entries}
-        />
+        <Entries entries={entries}/>
+        //limit -- 
       </div>
     );
   }
@@ -59,7 +58,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer);
     // }   
 //     return(
 //       <div>
-//         <h2 style={red} > Entries</h2>
+//         <h2 style={color: '#cd5c5c'} > Entries</h2>
 //         <ul>
 //            <EntryList/>
 //         </ul>

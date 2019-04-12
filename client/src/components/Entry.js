@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Entry extends Component {
-  render() {
-    return (
-      <div>
-        <li>
-          {this.props.entry}
-        
-        </li>
-       </div> 
-      )
-  }
-}  //add content 
+const Entry = (props) =>  {
+  return (
+      <li>
+        {props.title} 
+        {props.key}
+        {props.content}     
+      </li>
+  )
+} 
 
+export default Entry;
 // const Entry = (entry: {id, title, content})  =>  {
 //     <div key={id}>
 //       <h2> {title} </h2>
@@ -25,7 +23,7 @@ class Entry extends Component {
 //     </div>
 // }
   
-export default Entry;
+
 
  //if (entry.public === "yes") {
     //<Link to="/user.id">See more </Link>

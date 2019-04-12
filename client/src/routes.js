@@ -8,67 +8,13 @@ import Story from './components/Story';
 import EntriesContainer from './containers/EntriesContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Navbar from './components/Navbar';
 
-const link = {
-  width: '100px',
-  padding: '0px',
-  margin: '2px 2px 2px',
-  textDecoration: 'none',
-  color: 'white'
- }
-
-const listStyle = {
-  listStyle: 'none'
-}
 function AppRouter() {
   return(
     <Router> 
       <div>      
-        <nav>
-          <ul style={ listStyle }>
-            <li>
-              <NavLink 
-                to="/"
-                exact
-                style={link}
-                activeStyle={{ background: 'royalBlue'}}
-                >Home</NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/story"
-                exact
-                style={link}
-                activeStyle={{background: '#e69500'}}
-               >Story</NavLink>
-            </li>
-
-            <li>
-              <NavLink 
-                to="/signup"
-                exact
-                style={link}
-                activeStyle={{background: 'violet'}}
-                >Signup</NavLink> or <NavLink 
-                to="/login"
-                exact
-                style={link}
-                activeStyle={{background: 'violet'}}
-                >Login</NavLink> 
-            </li>  
-
-            <li>
-              <NavLink 
-                to="/entries"
-                exact
-                style={link}
-                activeStyle={{background: '#cd5c5c'}}
-
-              >Entries</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navbar/>
         <Route path='/' component={Home} />
         <Route exact path='/entries' component={EntriesContainer} />
         <Route exact path='/story' component={Story} />
