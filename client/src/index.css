@@ -9,11 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #96a3b7;
 }
-/*
-.App {
-  margin-top: 7em;
 
-}*/
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

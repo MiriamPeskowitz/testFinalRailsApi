@@ -1,3 +1,5 @@
+const url = "http://localhost:3001/api/v1/entries"
+
 export const createEntry = entry => {
   let data = {
     method: 'POST',
@@ -5,11 +7,11 @@ export const createEntry = entry => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ entry });
+    body: JSON.stringify({ entry })
   }
 
-  return dispatch = {
-    fetch('http://localhost:3005/api/v1/entries', data)
+  return dispatch => {
+    fetch(url, data)
       .then(response => response.json())
       .then(todo => dispatch({
         type: 'CREATE_ENTRY',

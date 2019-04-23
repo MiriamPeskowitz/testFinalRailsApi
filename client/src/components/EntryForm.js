@@ -1,31 +1,34 @@
- import React from 'react';
-import { Link } from 'react-router-dom';
-import './EntryForm.css';
-//refactor: use sass for all these colors 
-const red = {
-    color: '#cd5c5c'
-  }
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import './EntryForm.css';
+// //refactor: use sass for all these colors 
+// const red = {
+//     color: '#cd5c5c'
+//   }
 
-const EntryForm = () =>
 
-  <form>
-      <fieldset>
-        <legend style={red}> New Entry</legend>
+
+
+// const EntryForm = () =>
+
+//   <form onSubmit={ this.onSubmit }>
+//       <fieldset>
+//         <legend style={red}> New Entry</legend>
         
-        <label htmlFor="Title">Title: <textarea rows="1" cols= "40" name="title"> </textarea></label>
+//         <label htmlFor="Title">Title: <textarea rows="1" cols= "40" name="title"> </textarea></label>
   
-        <br/>
+//         <br/>
 
-        <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content"></textarea></label>
+//         <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content"></textarea></label>
     
-        <br/>
-        <input type="submit" value="Submit" />
+//         <br/>
+//         <input type="submit" value="Submit" />
 
-      </fieldset>
+//       </fieldset>
 
-    <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
+//     <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
   
-  </form>
+//   </form>
 
-//needs onSubmit -- createEntry
-export default EntryForm;
+// //needs onSubmit -- createEntry
+// export default EntryForm;

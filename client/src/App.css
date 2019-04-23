@@ -17,3 +17,7 @@
 .App-link {
   color: #61dafb;
 }
+
+label textarea{
+ vertical-align: middle;
+}

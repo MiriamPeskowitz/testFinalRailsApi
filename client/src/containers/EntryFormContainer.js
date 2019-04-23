@@ -1,53 +1,80 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
-// import { Link } from 'react-router-dom';
+import '../App.css';
+import  { createEntry } from '../actions/entryFormActions';
 
-// import Entries from '../components/Entries'
-import EntryForm from '../components/EntryForm'
-// import  { fetchAllEntries } from '../actions/entriesActions';
-
-
-
-// const red = {
-//     color: '#cd5c5c'
-//   }
-
+//componentwillmount -- load entry form 
 class EntryFormContainer extends Component {
   constructor() {
-    super();
-    //state
-    this.onClick = this.onClick.bind(this);
- }
-  //need this? No -- on submit 
-  componentWillMount() {
-  
-    this.props.fetchAllEntries()
-    console.log('Entries', this.props.entries)
+    super()
+
+    this.state = ({
+      title: "",
+      content: ""
+    })
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
-//add onChange and onSubmit 
+ 
+  onChange(event) {
+
+    const field = event.target.name
+    let state = this.state
+    
+    state[field] = event.target.value
+    this.setState(state)
+  }
+
+  onSubmit(event) {
+    event.preventDefault()
+    
+    this.props.createEntry(this.state)  
+    this.setState({
+      title: "",
+      content: ""
+    })
+  }
 
   render() {  
-    <EntryForm/>
-    // const { entries } = this.props;
-    // return (
-    //   <div>
-    //     <h2 style={red}> Entries </h2>
-    //     <Link to='/entries/new' style={red}> New Entry </Link>
-    //     <Entries entries={entries}/>
-    //   </div>
-    // );
-  }
- }  
+    const { title, content } = this.state
 
-const mapStateToProps = state => {
-  return {
-    // entries: state.entryFormReducer.entries
+    const red = {color: '#cd5c5c'}
+
+    return (
+      <form onSubmit={ this.onSubmit }>
+          <fieldset>
+            <legend style={red}> New Entry</legend>
+            
+            <label htmlFor="Title">Title: <textarea rows="1" cols= "40" name="title" value={ title }  onChange={ this.onChange }></textarea></label>
+      
+            <br/>
+
+            <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content" onChange={ this.onChange } value= { content } ></textarea></label>
+        
+            <br/>
+            <input type="submit" value="Submit" />
+
+          </fieldset>
+
+        <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
+      
+      </form>
+    ) 
   }
 }
+// const mapStateToProps = state => {
+//   return {
+
+//     entries: state.entryFormReducer.entries
+//   }
+// }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   // fetchAllEntries
+  createEntry
 }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(EntryFormContainer);
+export default connect(null, mapDispatchToProps)(EntryFormContainer);

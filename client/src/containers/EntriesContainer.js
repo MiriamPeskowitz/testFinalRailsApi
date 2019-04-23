@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom';
-
+import EntryFormContainer from './EntryFormContainer'
 import Entries from '../components/Entries'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
@@ -24,15 +24,14 @@ class EntriesContainer extends Component {
  }
   
   componentWillMount() {
-    console.log('in CWM')
+    // console.log('in CWM')
     this.props.fetchAllEntries()
-    console.log('Entries', this.props.entries)
+    // console.log('Entries', this.props.entries)
   }
 
   onClick(e) {
     e.preventDefault();
   }
-
 
   render() {  
     const { entries } = this.props;
@@ -41,6 +40,7 @@ class EntriesContainer extends Component {
         <h2 style={red}> Entries </h2>
         <Link to='/entries/new' style={red}> New Entry </Link>
         <Entries entries={entries}/>
+        <Link to='/entries/new' style={red}> Add a New Entry </Link>
       </div>
     );
   }

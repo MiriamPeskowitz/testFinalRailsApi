@@ -1,0 +1,8 @@
+/*refactor to components.css, or app.css? */
+
+
+/* aligns label with textarea -- also, wrap label around 
+label textarea{
+ vertical-align: middle;
+}
+*/

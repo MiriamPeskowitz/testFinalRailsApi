@@ -3,13 +3,14 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom'; 
+import EntriesContainer from './containers/EntriesContainer';
+import EntryForm from './containers/EntryFormContainer';
 import Home from './components/Home';
 import Story from './components/Story';
-import EntriesContainer from './containers/EntriesContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
-import EntryForm from './components/EntryForm';
+
 
 function AppRouter() {
   return(

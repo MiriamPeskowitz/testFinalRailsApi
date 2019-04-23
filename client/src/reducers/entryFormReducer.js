@@ -5,7 +5,7 @@ export default function entryFormReducer(
     }, action) 
 
     switch(action.type) {
-      case "CREATE_ENTRT":
+      case "CREATE_ENTRY":
         return {
           ...state
         }

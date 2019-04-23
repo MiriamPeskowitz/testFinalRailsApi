@@ -1,3 +1,5 @@
+// this component organizes the header and AppRouter (from which the containers and components are called)
+
 import React, { Component } from 'react';
 import AppRouter from './routes';
 import './App.css';
