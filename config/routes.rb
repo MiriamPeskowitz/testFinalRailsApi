@@ -4,7 +4,8 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :destroy, :update] do
         resources :entries, only: [:create, :destroy, :update]
       end
-      resources :entries, only: [:index]
+      resources :entries, only: [:index, :create, :destroy,
+        :update]
     end
   end
 end

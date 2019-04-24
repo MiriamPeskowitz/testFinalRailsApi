@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom';
-import EntryFormContainer from './EntryFormContainer'
 import Entries from '../components/Entries'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
@@ -28,6 +27,7 @@ class EntriesContainer extends Component {
     this.props.fetchAllEntries()
     // console.log('Entries', this.props.entries)
   }
+
 
   onClick(e) {
     e.preventDefault();

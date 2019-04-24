@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import '../App.css';
 import  { createEntry } from '../actions/entryFormActions';
+// import EntryForm from '../components/EntryForm'
 
-//componentwillmount -- load entry form 
+const red = {color: '#cd5c5c'}
+
 class EntryFormContainer extends Component {
   constructor() {
     super()
 
     this.state = ({
       title: "",
-      content: ""
+      content: "",
+      redirect: false
     })
-
+//key: false inside render, if true, redirect to /entries
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -31,20 +34,25 @@ class EntryFormContainer extends Component {
   onSubmit(event) {
     event.preventDefault()
     
-    this.props.createEntry(this.state)  
+    this.props.createEntry({title: this.state.title, content: this.state.content}) 
     this.setState({
       title: "",
-      content: ""
+      content: "",
+      redirect: true
     })
+    //use history.push 
+    //change the createEntry 
+
   }
 
   render() {  
     const { title, content } = this.state
-
-    const red = {color: '#cd5c5c'}
-
+    if (this.state.redirect === true) {
+      return <Redirect to='/entries' /> }
+    
     return (
-      <form onSubmit={ this.onSubmit }>
+
+      <form onSubmit={ (event) => this.onSubmit(event) }>
           <fieldset>
             <legend style={red}> New Entry</legend>
             
@@ -55,7 +63,7 @@ class EntryFormContainer extends Component {
             <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content" onChange={ this.onChange } value= { content } ></textarea></label>
         
             <br/>
-            <input type="submit" value="Submit" />
+            <button type="submit">Add </button>
 
           </fieldset>
 
@@ -65,6 +73,9 @@ class EntryFormContainer extends Component {
     ) 
   }
 }
+//how do I add, return to entries upon submit? 
+
+
 // const mapStateToProps = state => {
 //   return {
 

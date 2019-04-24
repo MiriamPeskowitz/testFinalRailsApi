@@ -7,16 +7,16 @@ export const createEntry = entry => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ entry })
+    body: JSON.stringify( entry )
   }
-
+  console.log("got to dispatch")
   return dispatch => {
     fetch(url, data)
       .then(response => response.json())
-      .then(todo => dispatch({
+      .then(ent => dispatch({
         type: 'CREATE_ENTRY',
-        payload: entry
-    }))
+        payload: ent
+      }))
     .catch(err => err)
   }
 }

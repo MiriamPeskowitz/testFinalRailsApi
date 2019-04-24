@@ -6,7 +6,7 @@ class Api::V1::EntriesController < ApplicationController
   end
 
   def create
-    entry = entry.create(entruy_params)
+    entry = Entry.create(entry_params)
     render json: entry
   end
 
@@ -22,6 +22,6 @@ class Api::V1::EntriesController < ApplicationController
 
   private
   def entry_params
-    params.requre(:entry).permit(:id, :title, :content, :public)
+    params.require(:entry).permit(:id, :title, :content, :public)
   end 
 end 

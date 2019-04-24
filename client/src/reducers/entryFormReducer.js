@@ -7,7 +7,8 @@ export default function entryFormReducer(
     switch(action.type) {
       case "CREATE_ENTRY":
         return {
-          ...state
+          ...state, 
+        entries: [ ...state.entries, action.payload ]
         }
       default: 
         return state;  
