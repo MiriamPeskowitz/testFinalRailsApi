@@ -11,8 +11,7 @@ import React from 'react';
 const Entry = (props) =>  {
   return (
     <div>
-      <li >
-        {props.key}
+      <li  key={props.key} >
         {props.title} : {props.content} 
       </li>
       <br/>

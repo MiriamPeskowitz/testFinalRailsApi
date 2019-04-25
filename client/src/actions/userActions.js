@@ -11,7 +11,7 @@ export const createUser = user => {
     },
     body: JSON.stringify( user )
   }
-  console.log("GOT HERE  to user-action-dispatch")
+ 
 
   return dispatch => {
     fetch(url, data)
@@ -19,6 +19,29 @@ export const createUser = user => {
       .then(newUser => dispatch({
         type: 'CREATE_USER',
         payload: newUser
+      }))
+    .catch(err => err)
+  }
+}
+
+// Login should user be currentUser? 
+export const loginUser = user => {
+  let data = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify( user )
+  }
+ 
+
+  return dispatch => {
+    fetch(url, data)
+      .then(response => response.json())
+      .then(user => dispatch({
+        type: 'LOGIN_USER',
+        payload: user
       }))
     .catch(err => err)
   }

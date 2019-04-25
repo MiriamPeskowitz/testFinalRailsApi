@@ -1,16 +1,15 @@
-//put the whole thing here and then learn to refactor into components 
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import '../App.css';
-import  { createUser } from '../actions/userActions';
+import  { loginUser } from '../actions/userActions';
 // import Signup from '../components/Signup';
 
 const violet = {color: 'violet'}
 
-class UsersContainer extends Component {
+class LoginContainer extends Component {
   constructor() {
     super()
 
@@ -36,7 +35,7 @@ class UsersContainer extends Component {
   onSubmit(event) {
     event.preventDefault()
     
-    this.props.createUser({name: this.state.name, email: this.state.email}) 
+    this.props.loginUser({name: this.state.name, email: this.state.email}) 
 
     this.setState({
       name: "",
@@ -49,27 +48,21 @@ class UsersContainer extends Component {
    
     const { name, email } = this.state
     if (this.state.redirect === true) {
-      return <Redirect to='/' /> }
+      return <Redirect to='/entries/new' /> }
 
      return (
       <form onSubmit={ (event) => this.onSubmit(event) }>
-        <h2 style={violet}>Signup</h2>
+        <h2 style={violet}>Login</h2>
        
-         <label htmlFor="name">  Choose your username: <textarea rows="1" cols= "40" name="name" value={ name } placeholder="name" onChange={ this.onChange }></textarea></label>
+         <label htmlFor="name">  Username: <textarea rows="1" cols= "40" name="name" value={ name } placeholder="name" onChange={ this.onChange }></textarea></label>
   
        
           <br/>
 
           <label htmlFor="email">Email: <textarea rows="1" cols= "40" name="email" placeholder="your email" onChange={ this.onChange } value= { email } ></textarea></label>
       
-
-{/* Removed for the time being; needs its  OnChange value separated from the first email; and it needs some logic 
-        <br/>
-
-          <label htmlFor="confirm email">Confirm Email: <textarea rows="1" cols= "40" name="confirm email" placeholder="confirm your email" onChange={ this.onChange } value= { email } ></textarea></label>
-*/}
       <br/>
-        <button type="submit">Signup</button>
+        <button type="submit">Login</button>
       </form>
      
       )
@@ -77,12 +70,8 @@ class UsersContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  createUser
+  loginUser
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(UsersContainer);
-
-
-
-
+export default connect(null, mapDispatchToProps)(loginContainer);
 
