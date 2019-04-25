@@ -10,6 +10,7 @@ export const createEntry = entry => {
     body: JSON.stringify( entry )
   }
   console.log("got to dispatch")
+  
   return dispatch => {
     fetch(url, data)
       .then(response => response.json())

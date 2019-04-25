@@ -16,7 +16,7 @@ export const createUser = user => {
   return dispatch => {
     fetch(url, data)
       .then(response => response.json())
-      .then( newUser => dispatch({
+      .then(newUser => dispatch({
         type: 'CREATE_USER',
         payload: newUser
       }))
