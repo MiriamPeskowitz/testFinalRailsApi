@@ -11,7 +11,7 @@ export const createUser = user => {
     },
     body: JSON.stringify( user )
   }
-  console.log("got to user-action-dispatch")
+  console.log("GOT HERE  to user-action-dispatch")
 
   return dispatch => {
     fetch(url, data)

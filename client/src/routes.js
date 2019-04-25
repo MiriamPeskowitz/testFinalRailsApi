@@ -9,7 +9,7 @@ import UsersContainer from './containers/UsersContainer';
 import Home from './components/Home';
 import Story from './components/Story';
 import Login from './components/Login';
-import Signup from './components/Signup';
+// import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 
 

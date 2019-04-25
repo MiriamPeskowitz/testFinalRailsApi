@@ -1,10 +1,12 @@
+//put the whole thing here and then learn to refactor into components 
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import '../App.css';
 import  { createUser } from '../actions/userActions';
-import Signup from '../components/Signup';
+// import Signup from '../components/Signup';
 
 const violet = {color: 'violet'}
 
@@ -33,11 +35,13 @@ class UsersContainer extends Component {
 
   onSubmit(event) {
     event.preventDefault()
-    
-    this.props.createUser({title: this.state.title, content: this.state.content}) 
+    console.log("GOT TO this.props.createUser")
+    this.props.createUser({
+        username: this.state.username, email: this.state.email
+      }) 
     this.setState({
-      title: "",
-      content: "",
+      username: "",
+      email: "",
       redirect: true
     })
   }
@@ -50,23 +54,33 @@ class UsersContainer extends Component {
 
      return (
         <form>
-          <h2 style={violet}>Signup - new</h2>
-          <div>
+          <h2 style={violet}>Signup</h2>
+          {/*<div>
             <input type="text" name="username" placeholder="pick a username" />
-            
-        {/*    <label htmlFor="username">Username</label>*/}
-          </div>
+             </div>*/}
+           <label htmlFor="username">Choose your User Name: <textarea rows="1" cols= "40" name="username" value={ username } placeholder="pick a username" onChange={ this.onChange }></textarea></label>
+    
+         
+            <br/>
 
+            <label htmlFor="email">Email: <textarea rows="1" cols= "40" name="email" placeholder="your email" onChange={ this.onChange } value= { email } ></textarea></label>
+        
+{/*
           <div>
             <input type="password" name="password" placeholder="password" />
            {/* <label htmlFor="password">Password</label>*/}
-          </div>
-          <div>
-            <input type="password" name="confirm-password" placeholder="confirmpassword" />
-           {/* <label htmlFor="password">Password</label>*/}
-          </div>
+       
 
-          <input type="submit" value="login" />
+          <br/>
+
+            <label htmlFor="confirm email">Confirm Email: <textarea rows="1" cols= "40" name="confirm email" placeholder="confirm your email" onChange={ this.onChange } value= { email } ></textarea></label>
+
+          {/*<div>
+            <input type="password" name="confirm-password" placeholder="confirmpassword" />
+           {/* <label htmlFor="password">Password</label>
+          </div>*/}
+
+          <button type="submit">Signup</button>
         </form>
        
         )
@@ -77,10 +91,10 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   createUser
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(UsersContainer);//if user.password = params.password 
+export default connect(null, mapDispatchToProps)(UsersContainer);
 
 
- {/*<Signup onSubmit={ (event) => this.onSubmit(event) }/> //What do I need to pass in? */}
+
 
   //below was copied from entry form container, started to change it before deciding to use what I have   
   //   return (

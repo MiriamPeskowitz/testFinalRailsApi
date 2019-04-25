@@ -86,6 +86,6 @@ class EntryFormContainer extends Component {
 const mapDispatchToProps = dispatch => bindActionCreators({
   // fetchAllEntries
   createEntry
-}, dispatch)
+  }, dispatch)
 
 export default connect(null, mapDispatchToProps)(EntryFormContainer);
