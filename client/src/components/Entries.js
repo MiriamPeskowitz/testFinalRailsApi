@@ -1,6 +1,6 @@
 import React from 'react';
 import Entry from './Entry';
-//change to function, doesn't need to be a component, no lc methods or 
+
 
 const listStyle = {
     listStyle: 'none'

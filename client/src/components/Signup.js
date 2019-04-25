@@ -2,7 +2,7 @@ import React from 'react';
 
 const violet = {color: 'violet'};
 
-const Login = () =>
+const Signup = () =>
   <form>
     <h2 style={violet}>Signup</h2>
     <div>
@@ -23,4 +23,4 @@ const Login = () =>
     <input type="submit" value="login" />
   </form>
  
-export default Login;
+export default Signup;
