@@ -21,10 +21,24 @@ export default function entriesReducer(
         entries: action.payload
       };
 
+    case "DELETE_ENTRY":
+        console.log("got to delete entries in reducer")
+      return {
+        ...state,
+        entries: state.entries.filter(entry => entry.id !== action.payload.id)
+      }
+
+    case 'EDIT_ENTRY':
+      console.log("got to edit entries in reducer")
+      return
+        state.map(entry => entry.id === action.entry.id) ?
+           action.payload : entry;  
+
     default: 
       return state;  
   }
 };
+
 
 // add 'CREATE_ENTRY'  'UPDATE_ENTRY' 'DELETE_ENTRY'
   

@@ -8,38 +8,37 @@ import { Link } from 'react-router-dom';
 import Entries from '../components/Entries'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
-
-
+import  { deleteEntry, editEntry } from '../actions/entriesActions';
 
 const red = {
     color: '#cd5c5c'
   }
 
+
 class EntriesContainer extends Component {
   constructor() {
-    super();
-    //state
-    this.onClick = this.onClick.bind(this);
+    super(); 
+
+   
  }
   
   componentWillMount() {
     // console.log('in CWM')
     this.props.fetchAllEntries()
+    // this.props.fetchUser()  
+
     // console.log('Entries', this.props.entries)
   }
 
 
-  onClick(e) {
-    e.preventDefault();
-  }
 
   render() {  
-    const { entries } = this.props;
+    const { entries, deleteEntry } = this.props;
     return (
       <div>
         <h2 style={red}> Entries </h2>
         <Link to='/entries/new' style={red}> New Entry </Link>
-        <Entries entries={entries}/>
+        <Entries entries={entries} deleteEntry={deleteEntry} />
         <Link to='/entries/new' style={red}> Add a New Entry </Link>
       </div>
     );
@@ -53,7 +52,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchAllEntries
+  fetchAllEntries,
+  deleteEntry,
+  editEntry
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 

@@ -1,24 +1,22 @@
 import React from 'react';
 
-// const align = {
-//     textAlign: 'center'
-//   }
 
-// const padding = {
-//     padding: '40px'
-//   }
 
-const Entry = (props) =>  {
+
+const Entry = (props) => {
+  const {entry, deleteEntry, editEntry} = props 
+  // console.log(props)
   return (
     <div>
-      <li key={props.key} >
-        {props.title} : {props.content} 
-      </li>
+      <li key={entry.id} >
+          <p>{entry.title} : <br/>{entry.content} </p>
+          <button onClick={ () => deleteEntry(entry) }>Delete </button> 
+          <button onClick={ () => editEntry(entry) }>Edit </button>       
+        </li>
       <br/>
     </div>
-  )
-} 
-
+  );
+}
 export default Entry;
 //add feature: LIMIT= 10, then MORE button
 //limit url == ?limit=${PER_PAGE} const PER_PAGE= 20 
