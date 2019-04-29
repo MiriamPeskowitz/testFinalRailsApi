@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Entries from '../components/Entries'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
-import  { deleteEntry, editEntry } from '../actions/entriesActions';
+import  { deleteEntry } from '../actions/entriesActions';
 
 const red = {
     color: '#cd5c5c'
@@ -53,8 +53,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchAllEntries,
-  deleteEntry,
-  editEntry
+  deleteEntry
+  // ,
+  // editEntry
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 

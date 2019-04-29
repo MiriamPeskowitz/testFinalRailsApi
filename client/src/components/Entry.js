@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-
-
 const Entry = (props) => {
   const {entry, deleteEntry, editEntry} = props 
   // console.log(props)

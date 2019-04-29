@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import '../App.css';
 import  { createUser } from '../actions/userActions';
-// import Signup from '../components/Signup';
+import { Signup } from './components/Signup'
 
 const violet = {color: 'violet'}
 
@@ -46,7 +46,7 @@ class UsersContainer extends Component {
   }
 
   render() { 
-   
+    <Signup />
     const { name, email } = this.state
     if (this.state.redirect === true) {
       return <Redirect to='/' /> }

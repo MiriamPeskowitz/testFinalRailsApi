@@ -28,11 +28,12 @@ export default function entriesReducer(
         entries: state.entries.filter(entry => entry.id !== action.payload.id)
       }
 
-    case 'EDIT_ENTRY':
-      console.log("got to edit entries in reducer")
-      return
-        state.map(entry => entry.id === action.entry.id) ?
-           action.payload : entry;  
+    // case 'EDIT_ENTRY':
+    //   console.log("got to edit entries in reducer")
+    //   return {
+    //     state.entries.map(entry => entry.id === action.entry.id) ?
+    //        action.payload : entry;  
+    //   }
 
     default: 
       return state;  
