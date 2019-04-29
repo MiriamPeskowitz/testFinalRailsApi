@@ -17,20 +17,13 @@ const red = {
 
 class EntriesContainer extends Component {
   constructor() {
-    super(); 
-
-   
+    super();  
  }
   
   componentWillMount() {
-    // console.log('in CWM')
     this.props.fetchAllEntries()
     // this.props.fetchUser()  
-
-    // console.log('Entries', this.props.entries)
   }
-
-
 
   render() {  
     const { entries, deleteEntry } = this.props;

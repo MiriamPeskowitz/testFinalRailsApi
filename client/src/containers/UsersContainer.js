@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import '../App.css';
 import  { createUser } from '../actions/userActions';
-import { Signup } from './components/Signup'
+// import { Signup } from '../components/Signup'
 
 const violet = {color: 'violet'}
 
@@ -46,35 +46,35 @@ class UsersContainer extends Component {
   }
 
   render() { 
-    <Signup />
-    const { name, email } = this.state
-    if (this.state.redirect === true) {
-      return <Redirect to='/' /> }
+    return
+    // <Signup />
 
-     return (
-      <form onSubmit={ (event) => this.onSubmit(event) }>
-        <h2 style={violet}>Signup</h2>
+    const { name, email } = this.state
+     if (this.state.redirect === true) {
+       return <Redirect to='/' /> }
+
+      return (
+       <form onSubmit={ (event) => this.onSubmit(event) }>
+         <h2 style={violet}>Signup</h2>
        
          <label htmlFor="name">  Choose your username: <textarea rows="1" cols= "40" name="name" value={ name } placeholder="name" onChange={ this.onChange }></textarea></label>
   
        
+           <br/>
+
+        <label htmlFor="email">Email: <textarea rows="1" cols= "40" name="email" placeholder="your email" onChange={ this.onChange } value= { email } ></textarea></label>
+
+            <br/>
+
+        <label htmlFor="confirm email">Confirm Email: <textarea rows="1" cols= "40" name="confirm email" placeholder="confirm your email" onChange={ this.onChange } value= { email } ></textarea></label>
           <br/>
-
-          <label htmlFor="email">Email: <textarea rows="1" cols= "40" name="email" placeholder="your email" onChange={ this.onChange } value= { email } ></textarea></label>
-      
-
-{/* Removed for the time being; needs its  OnChange value separated from the first email; and it needs some logic 
-        <br/>
-
-          <label htmlFor="confirm email">Confirm Email: <textarea rows="1" cols= "40" name="confirm email" placeholder="confirm your email" onChange={ this.onChange } value= { email } ></textarea></label>
-*/}
-      <br/>
         <button type="submit">Signup</button>
-      </form>
-     
-      )
-    } 
-}
+      </form> 
+   
+    )
+  }
+} 
+
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   createUser
@@ -82,7 +82,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 export default connect(null, mapDispatchToProps)(UsersContainer);
 
-
-
-
-
+             

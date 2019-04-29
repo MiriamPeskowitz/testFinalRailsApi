@@ -25,3 +25,4 @@ class Api::V1::EntriesController < ApplicationController
     params.require(:entry).permit(:id, :title, :content, :public)
   end 
 end 
+# add user.id

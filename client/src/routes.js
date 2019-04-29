@@ -8,7 +8,7 @@ import EntryFormContainer from './containers/EntryFormContainer';
 import UsersContainer from './containers/UsersContainer';
 import Home from './components/Home';
 import Story from './components/Story';
-import Login from './components/Login';
+// import Login from './components/Login';
 // import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 
@@ -21,7 +21,7 @@ function AppRouter() {
         <Route path='/' component={Home} />
         <Route exact path='/entries' component={EntriesContainer} />
         <Route exact path='/story' component={Story} />
-        <Route exact path='/login' component={Login} />
+        {/*<Route exact path='/login' component={Login} />*/}
         <Route exact path='/signup' component={UsersContainer} />
         <Route exact path='/entries/new' component={EntryFormContainer} />
        {/*  <Route exact path='/users/signup' component={UsersFormContainer} />*/}
