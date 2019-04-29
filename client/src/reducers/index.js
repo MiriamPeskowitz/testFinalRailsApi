@@ -3,9 +3,10 @@ import entriesReducer from './entriesReducer';
 import usersReducer from './usersReducer';
 import entryFormReducer from './entryFormReducer';
 
-export default combineReducers({
+ const rootReducer = combineReducers({
   entriesReducer, 
+  entryFormReducer,
   usersReducer,
-  entryFormReducer
 });
 
+export default rootReducer

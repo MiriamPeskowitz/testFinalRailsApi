@@ -10,7 +10,7 @@ export function fetchAllEntries(){
       'Content-Type': 'application/json'
     }
   }
-  const url = 'http://localhost:3001/api/v1/entries.id';
+  const url = 'http://localhost:3001/api/v1/entries';
   return dispatch => {
     // dispatch({
     //   type: 'LOADING_ENTRIES',

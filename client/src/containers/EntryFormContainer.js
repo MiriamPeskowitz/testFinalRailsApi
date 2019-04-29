@@ -22,20 +22,32 @@ class EntryFormContainer extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
  
-  onChange = (event) => {
-    const field = event.target.name
-    console.log(event.target.name)
+  // onChange = (event) => {
+  //   const field = event.target.name
+  //   console.log("onChange:", event.target.name)
+    
+  //   this.setState({
+  //     [field]: [event.target.value]
+  //   })
+  // }
+//this.state[field]: event.target.value
+  onChange = event => {
+    const {name, value} = event.target
+    console.log("onChange", event.target.name)
     this.setState({
-      [field]: [event.target.value]
+      [name]: value,
     })
   }
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
+
+    console.log("onSubmit:", this.state)
+
     this.props.createEntry({
       title: this.state.title,
       content: this.state.content}) 
+
     this.setState({
       title: "",
       content: "",

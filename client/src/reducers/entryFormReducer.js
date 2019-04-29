@@ -1,7 +1,7 @@
 export default function entryFormReducer(
    state={}, action) {
   
-  console.log("got to entry form reducer action.type", state)
+  console.log("top of entry form reducer:", state)
 
     switch(action.type) {
       case "CREATE_ENTRY":
