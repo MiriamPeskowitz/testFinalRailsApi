@@ -20,7 +20,7 @@ class EntriesContainer extends Component {
     super();  
  }
   
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllEntries()
     // this.props.fetchUser()  
   }

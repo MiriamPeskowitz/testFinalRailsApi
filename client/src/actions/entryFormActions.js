@@ -15,6 +15,7 @@ export const createEntry = newEntry => {
     fetch(url, data)
       .then(console.log(data))
       .then(response => response.json())
+      // 
       .then(newEntry => {
         dispatch({
         type: 'CREATE_ENTRY',
@@ -24,4 +25,14 @@ export const createEntry = newEntry => {
       .catch(err => err)
     }
 }
-//tell Annabelle -- the problem was ent, payload: ent. It had to be the same newEntry, throughout, since this is senidng to the db.
+// Thunk syntax
+// export function fetchCats() {
+//   return (dispatch) => {
+//     dispatch({ type: 'START_ADDING_CATS_REQUEST' });
+//     return fetch('http://www.catapi.com')
+//       .then(response => response.json())
+//       .then(cats => dispatch({ type: 'ADD_CATS', cats }));
+//   };
+// }
+
+//tell Annabel -- the problem was ent, payload: ent. It had to be the same newEntry, throughout, since this is senidng to the db.

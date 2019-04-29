@@ -30,10 +30,10 @@ class EntryFormContainer extends Component {
   //     [field]: [event.target.value]
   //   })
   // }
-//this.state[field]: event.target.value
+
   onChange = event => {
     const {name, value} = event.target
-    console.log("onChange", event.target.name)
+ 
     this.setState({
       [name]: value,
     })
@@ -68,7 +68,8 @@ class EntryFormContainer extends Component {
       )
   }
 }
-//how do I add, return to entries upon submit? 
+//how do I add, return to entries upon submit? DONE though redirect boolean 
+ //how do I best solve the async problem -- 
 
 
 const mapStateToProps = state => {
