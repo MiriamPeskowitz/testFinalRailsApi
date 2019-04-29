@@ -9,15 +9,17 @@ export const createEntry = entry => {
     },
     body: JSON.stringify( entry )
   }
-  console.log("got to dispatch")
+  console.log(entry)
   
   return dispatch => {
     fetch(url, data)
       .then(response => response.json())
-      .then(ent => dispatch({
+      .then(ent => {
+        dispatch({
         type: 'CREATE_ENTRY',
         payload: ent
-      }))
+      })
+    })
     .catch(err => err)
   }
 }

@@ -4,12 +4,12 @@ export default function userReducer(
     email: ''
   }, action) {
 
-  console.log("got to users reducer action.type", state)
+  // console.log("got to users reducer action.type", state)
 
   switch(action.type) {
     case "CREATE_USER":
      
-     console.log("got to create user in reducer")
+     // console.log("got to create user in reducer")
      
       return {
         ...state, 

@@ -5,24 +5,25 @@ const listStyle = {
     listStyle: 'none'
   }
 const Entries = (props) => {
-    const {entries, deleteEntry, editEntry} = props;
+  const {entries, deleteEntry, editEntry} = props;
 
-    const entriesList = entries.map((entry) => {
-      return (
-        <Entry entry={entry}
-          deleteEntry={ deleteEntry }
-          editEntry={ editEntry }
-          />
-      )
-    });
+  const entriesList = entries.map((entry) => {
+    return (
+      <Entry entry={entry}
+        deleteEntry={ deleteEntry }
+        editEntry={ editEntry }
+        key= {entry.id}
+        />
+    )
+  });
     
-    return(
-      <div>
-        <ul style={ listStyle }>
-          { entriesList }
-        </ul>
-      </div>
-    );
-  }  
+  return(
+    <div>
+      <ul style={ listStyle }>
+        { entriesList }
+      </ul>
+    </div>
+  );
+}  
 
 export default Entries;

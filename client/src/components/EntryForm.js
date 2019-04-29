@@ -1,27 +1,32 @@
 //I tried to refactor part of the EntryForm Container here, but need some help
 
-// import React from 'react';
+import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
-// const EntryForm = () => {
-//   return
-//       <form onSubmit={ this.onSubmit }>
-//           <fieldset>
-//             <legend style={red}> New Entry</legend>
+
+
+const EntryForm = (props) => {
+  const red = {color: '#cd5c5c'}
+  return (
+      <form onSubmit={ (event) => props.onSubmit(event) }>
+          <fieldset>
+            <legend style={red}> New Entry</legend>
             
-//             <label htmlFor="Title">Title: <textarea rows="1" cols= "40" name="title" value={ title }  onChange={ this.onChange }></textarea></label>
+            <label htmlFor="Title">Title: <textarea rows="1" cols= "40" name="title" value={ props.title }  onChange={ (event) => props.onChange(event) }></textarea></label>
       
-//             <br/>
+            <br/>
 
-//             <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content" onChange={ this.onChange } value= { content } ></textarea></label>
+            <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content" onChange={ (event) => props.onChange(event) } value= { props.content } ></textarea></label>
         
-//             <br/>
-//             <input type="submit" value="Submit" />
+            <br/>
+            <button type="submit">Add </button>
 
-//           </fieldset>
+          </fieldset>
 
-//         <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
+        <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
       
-//       </form>
-//  }   
-// export default EntryForm;
+      </form>
+    ) 
+ }   
+export default EntryForm;
 

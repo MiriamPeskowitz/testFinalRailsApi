@@ -4,7 +4,7 @@ export default function entriesReducer(
     entries: []
   }, action) {
 
-  console.log("got to entries reducer action.type", state)
+  // console.log("got to entries reducer action.type", state)
   
   switch(action.type) {
   
@@ -13,7 +13,7 @@ export default function entriesReducer(
 
     case "FETCH_ALL_ENTRIES":
       
-      console.log("got to fetch all entries in reducer")
+      // console.log("got to fetch all entries in reducer")
       
       return {
         // loading: false,
@@ -22,7 +22,7 @@ export default function entriesReducer(
       };
 
     case "DELETE_ENTRY":
-        console.log("got to delete entries in reducer")
+        // console.log("got to delete entries in reducer")
       return {
         ...state,
         entries: state.entries.filter(entry => entry.id !== action.payload.id)

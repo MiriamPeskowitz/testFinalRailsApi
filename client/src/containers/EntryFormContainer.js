@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import '../App.css';
 import  { createEntry } from '../actions/entryFormActions';
-// import EntryForm from '../components/EntryForm'
+import EntryForm from '../components/EntryForm'
 
 const red = {color: '#cd5c5c'}
 
@@ -22,19 +22,20 @@ class EntryFormContainer extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
  
-  onChange(event) {
-
+  onChange = (event) => {
     const field = event.target.name
-    let state = this.state
-    
-    state[field] = event.target.value
-    this.setState(state)
+    console.log(event.target.name)
+    this.setState({
+      [field]: [event.target.value]
+    })
   }
 
-  onSubmit(event) {
+  onSubmit = (event) => {
     event.preventDefault()
-    
-    this.props.createEntry({title: this.state.title, content: this.state.content}) 
+    console.log(this.state)
+    this.props.createEntry({
+      title: this.state.title,
+      content: this.state.content}) 
     this.setState({
       title: "",
       content: "",
@@ -51,40 +52,22 @@ class EntryFormContainer extends Component {
       return <Redirect to='/entries' /> }
     
     return (
-
-      <form onSubmit={ (event) => this.onSubmit(event) }>
-          <fieldset>
-            <legend style={red}> New Entry</legend>
-            
-            <label htmlFor="Title">Title: <textarea rows="1" cols= "40" name="title" value={ title }  onChange={ this.onChange }></textarea></label>
-      
-            <br/>
-
-            <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content" onChange={ this.onChange } value= { content } ></textarea></label>
-        
-            <br/>
-            <button type="submit">Add </button>
-
-          </fieldset>
-
-        <Link to='/entries' style={red}>Cancel/Return to Entries</Link>
-      
-      </form>
-    ) 
+      <EntryForm title={title} content={content} onSubmit={this.onSubmit} onChange={this.onChange} />
+      )
   }
 }
 //how do I add, return to entries upon submit? 
 
 
-// const mapStateToProps = state => {
-//   return {
+const mapStateToProps = state => {
+  return {
 
-//     entries: state.entryFormReducer.entries
-//   }
-// }
+    entries: state.entryFormReducer.entries
+  }
+}
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   createEntry
   }, dispatch)
 
-export default connect(null, mapDispatchToProps)(EntryFormContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(EntryFormContainer);

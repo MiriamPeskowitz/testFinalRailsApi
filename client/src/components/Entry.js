@@ -3,13 +3,14 @@ import React from 'react';
 const Entry = (props) => {
   const {entry, deleteEntry, editEntry} = props 
   // console.log(props)
+  //add entry.user.name 
   return (
     <div>
-      <li key={entry.id} >
-          <p>{entry.title} : <br/>{entry.content} </p>
+      <li>
+          <p> {entry.title} : <br/>{entry.content} </p>
           <button onClick={ () => deleteEntry(entry) }>Delete </button> 
           <button onClick={ () => editEntry(entry) }>Edit </button>       
-        </li>
+      </li>
       <br/>
     </div>
   );
