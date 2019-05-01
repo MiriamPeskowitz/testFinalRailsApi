@@ -5,7 +5,6 @@ const Entry = (props) => {
   // console.log(props)
   //add entry.user.name 
 
-  
 
   return (
     <div>

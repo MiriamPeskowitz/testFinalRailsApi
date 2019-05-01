@@ -1,7 +1,8 @@
 export default function entriesReducer(
   state = {
     loading: false,
-    entries: []
+    entries: [], 
+    redirect: ""
   }, action) {
 
   // console.log("got to entries reducer action.type", state)
@@ -26,8 +27,11 @@ export default function entriesReducer(
      
       return {
         ...state,
-        entries: state.entries.filter(entry => entry.id !== action.payload.id)  
+        entries: state.entries.filter(entry => entry.id !== action.payload.entry.id),
+        redirect: true
+        
       }
+
 
 
     // case 'EDIT_ENTRY':

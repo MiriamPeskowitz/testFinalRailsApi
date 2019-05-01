@@ -20,14 +20,16 @@ class EntriesContainer extends Component {
   constructor() {
     super();  
     this.state = ({
-      redirect: false
+      redirect: ''
     })
  }
   
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllEntries()
     // this.props.fetchUser()  
   }
+
+  
 //how do I add a refresh after something is deleted or edited? similar to entry form container, where done as setState({redirect: true}) import { browserHistory } from 'react-router-dom' when you dispatch the action browserHistory.push()
   render() {  
     const { entries, deleteEntry } = this.props;
