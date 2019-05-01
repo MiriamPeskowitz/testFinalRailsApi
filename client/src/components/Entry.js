@@ -4,6 +4,9 @@ const Entry = (props) => {
   const {entry, deleteEntry, editEntry} = props 
   // console.log(props)
   //add entry.user.name 
+
+  
+
   return (
     <div>
       <li>

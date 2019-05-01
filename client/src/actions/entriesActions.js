@@ -38,8 +38,9 @@ export const deleteEntry = (entry) => {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    },
-     body: JSON.stringify(data),
+    }
+    // },
+    //  body: JSON.stringify(data),
   }
 
   console.log("entry:", entry)
@@ -51,16 +52,23 @@ export const deleteEntry = (entry) => {
     .then(console.log("url:", `${url}/${entry}`))
     .then(response => response.json())
     .then(console.log("got past response.json"))
-    .then(entry => dispatch({
-      type: "DELETE_ENTRY",
-      payload: entry
-    }, console.log("got past the dispatch. deletedEntry:", entry) 
-    ))  
+    .then(entry => 
+        dispatch({
+          type: "DELETE_ENTRY",
+          payload: entry
+      }))
+    // .then(entries =>  
+    //   dispatch({
+    //     type: 'FETCH_ALL_ENTRIES', 
+    //     payload: entries
+    // }))
+
     // .then(console.log("got past the dispatch. deletedEntry:", payload)) 
     // -- works, I can see the proper payload 
     .catch(err => err) 
- }
+  }
 }
+ // console.log("got past the dispatch. deletedEntry:", entry) 
 //then have to rerender page... 
 //debug: it's catching the entry.id #. what should happen next -- does it get to reducer? 
 //checked the api in console; delete IS working, could delete id:1 from there. so if it isn't backend, and the action isn't getting to th reducer. DID THIS: changed Delete to destroy, so it matched. That should have worked NEXT: when i press delete button, there's no response in my terminal. So, it's not getting there. Why? 
