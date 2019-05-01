@@ -8,7 +8,7 @@ const Entry = (props) => {
     <div>
       <li>
           <p> {entry.title} : <br/>{entry.content} </p>
-          <button onClick={ () => deleteEntry(entry) }>Delete </button> 
+          <button onClick={ () => deleteEntry(entry.id) }>Delete </button> 
           <button onClick={ () => editEntry(entry) }>Edit </button>       
       </li>
       <br/>

@@ -25,7 +25,7 @@ function AppRouter() {
         <Route exact path='/signup' component={UsersContainer} />
         <Route exact path='/entries/new' component={EntryFormContainer} />
        {/*  <Route exact path='/users/signup' component={UsersFormContainer} />*/}
-      
+    
       </div>
     </Router>   
   )

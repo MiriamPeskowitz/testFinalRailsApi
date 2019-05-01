@@ -1,7 +1,7 @@
 export default function userReducer(
   state = {
-    username: '',
-    email: ''
+    username: "",
+    email: ""
   }, action) {
 
   // console.log("got to users reducer action.type", state)
