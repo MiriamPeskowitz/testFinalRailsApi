@@ -1,7 +1,7 @@
 //I tried to refactor part of the EntryForm Container here, but need some help
 
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 

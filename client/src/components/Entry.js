@@ -11,7 +11,7 @@ const Entry = (props) => {
       <li>
           <p> {entry.title} : <br/>{entry.content} </p>
           <button onClick={ () => deleteEntry(entry.id) }>Delete </button> 
-          <button onClick={ () => editEntry(entry.id) }>Edit </button>       
+          <button  onClick={ () => editEntry(entry.id) } style={{ color: 'gray' }}>Edit </button>       
       </li>
       <br/>
     </div>

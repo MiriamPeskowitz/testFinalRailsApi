@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 import '../App.css';
 import  { createEntry } from '../actions/entryFormActions';
 import EntryForm from '../components/EntryForm'
-
-const red = {color: '#cd5c5c'}
 
 class EntryFormContainer extends Component {
   constructor() {
@@ -22,15 +20,6 @@ class EntryFormContainer extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
  
-  // onChange = (event) => {
-  //   const field = event.target.name
-  //   console.log("onChange:", event.target.name)
-    
-  //   this.setState({
-  //     [field]: [event.target.value]
-  //   })
-  // }
-
   onChange = event => {
     const {name, value} = event.target
  

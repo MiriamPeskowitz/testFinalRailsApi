@@ -3,14 +3,14 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 
 import Entries from '../components/Entries'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
 import  { deleteEntry, editEntry} from '../actions/entriesActions';
-import { createBrowserHistory } from 'history';
+// import { createBrowserHistory } from 'history';
 const red = {
     color: '#cd5c5c'
   }

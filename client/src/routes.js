@@ -5,7 +5,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom'; 
 import EntriesContainer from './containers/EntriesContainer';
 import EntryFormContainer from './containers/EntryFormContainer';
-import UsersContainer from './containers/UsersContainer';
+import UsersContainer from './containers/futureContainers/UsersContainer';
 import Home from './components/Home';
 import Story from './components/Story';
 // import Login from './components/Login';
