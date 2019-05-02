@@ -13,7 +13,7 @@ const Entries = (props) => {
         deleteEntry={ deleteEntry }
         editEntry={ editEntry }
         key= {entry.id}
-        />
+      />
     )
   });
     
