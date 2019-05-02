@@ -13,7 +13,6 @@ export function fetchAllEntries(){
       'Content-Type': 'application/json'
     }
   }
-   //refactor this to `${baseUrl}/entries`
   return dispatch => {
     // dispatch({
     //   type: 'LOADING_ENTRIES',
@@ -96,10 +95,7 @@ export const editEntry = (entry) => {
           type: "EDIT_ENTRY",
           payload: entry
       }))
-    
-
     .then(console.log("got past the dispatch. editEntry:", entry)) 
-    // -- works, I can see the proper payload 
     .catch(err => err) 
   }
 }
