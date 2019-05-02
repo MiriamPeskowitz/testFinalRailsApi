@@ -104,25 +104,25 @@ export const editEntry = (entry) => {
   }
 }
 
-sample code: 
-const ADD_TODO = 'ADD_TODO'
-const REMOVE_TODO = 'REMOVE_TODO'
-const UPDATE_TODO = 'UPDATE_TODO'
+// sample code: 
+// const ADD_TODO = 'ADD_TODO'
+// const REMOVE_TODO = 'REMOVE_TODO'
+// const UPDATE_TODO = 'UPDATE_TODO'
 
-const addEntry = (entry) => ({
-  type: ADD_TODO, 
-  text
-})
-const removeEntry = (id) => ({
-  type: REMOVE_ENTRY,
-  id
-})
+// const addEntry = (entry) => ({
+//   type: ADD_TODO, 
+//   text
+// })
+// const removeEntry = (id) => ({
+//   type: REMOVE_ENTRY,
+//   id
+// })
 
-const updateEntry = (id, text) => ({
-  type: UPDATE_TODO,
-  id,
-  text
-})}
+// const updateEntry = (id, text) => ({
+//   type: UPDATE_TODO,
+//   id,
+//   text
+// })}
 
  // console.log("got past the dispatch. deletedEntry:", entry) 
 //then have to rerender page... 

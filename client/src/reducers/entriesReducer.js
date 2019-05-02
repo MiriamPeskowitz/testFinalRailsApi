@@ -31,15 +31,16 @@ export default function entriesReducer(
         redirect: true
         
       }
-
-  //   case "EDIT_ENTRY":
-  //     console.log("got to edit entries in reducer")
-  //     return {
-  //       state.entries.map(entry =>  {
-  //         if (entry.id === action.payload.id)
-  //         return { 
-  //           ...entry,
-  //           ...action.payload.entry, 
+//something like this 
+   //  case "EDIT_ENTRY":
+   //    console.log("got to edit entries in reducer")
+   //    return {
+   //      const editedEntry = state.entries.find(entry => entry.id === action.id
+   //        )
+   //      entry.text = action.text
+   //      return n
+   
+   // ...action.payload.entry, 
   //         redirect: true  
   //       }
   //     }
