@@ -5,11 +5,18 @@ const Entry = (props) => {
   // console.log(props)
   //add entry.user.name 
 
+// const shouldComponentUpdate = (nextProps, nextState) => {
+//   const shouldUpdate  = this.props.status !== nextProps.status;
+//   return shouldUpdate;
+// }
 
   return (
     <div>
       <li>
-          <p> {entry.title} : <br/>{entry.content} </p>
+          <p> {entry.title}: 
+          <br/>{entry.content} 
+          {/*({entry.user.name})*/}
+          </p>
           <button onClick={ () => deleteEntry(entry.id) }>Delete </button> 
           <button  onClick={ () => editEntry(entry.id) } style={{ color: 'gray' }}>Edit </button>       
       </li>

@@ -3,8 +3,18 @@
 //FETCH ENTRIES
 
 // const baseUrl = 'http://localhost:3001/api/v1'
+
+// import * as types from './index';
+
 const url = 'http://localhost:3001/api/v1/entries';
 
+const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+//headers: headers
+
+//display all entries 
 export function fetchAllEntries(){
   const data = {
     method: 'GET',
@@ -34,10 +44,7 @@ export const deleteEntry = (entry) => {
   const data = {
     method: "DELETE",
     mode: "cors",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
+    headers: headers
     // },
     //  body: JSON.stringify(data),
   }
@@ -68,17 +75,15 @@ export const deleteEntry = (entry) => {
   }
 }
 
+// export const deleteEntrySuccess = (entry) => type: "DELETE_ENTRY_SUCCESS", payload: entry;
+
 //UPDATE ENTRY 
 export const editEntry = (entry) => {
   const data = {
-    method: "PATCH",
+    method: "PUT",
     mode: "no-cors",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-    // },
-    //  body: JSON.stringify(data),
+    headers: headers,
+    body: JSON.stringify(entry),
   }
 
   console.log("entry:", entry)
@@ -90,15 +95,18 @@ export const editEntry = (entry) => {
     .then(console.log("url:", `${url}/${entry}`))
     .then(response => response.json())
     .then(console.log("got past edit response.json"))
-    .then(entry => 
+    .then(responseEntry => 
         dispatch({
           type: "EDIT_ENTRY",
-          payload: entry
+          payload: responseEntry
       }))
     .then(console.log("got past the edit-Entry dispatch. editEntry:", entry)) 
     .catch(err => err) 
   }
 }
+
+
+
 
 // sample code: 
 // const ADD_TODO = 'ADD_TODO'

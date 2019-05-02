@@ -15,7 +15,7 @@ class EntryFormContainer extends Component {
       content: "",
       redirect: false
     })
-//key: false inside render, if true, redirect to /entries
+
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -28,8 +28,8 @@ class EntryFormContainer extends Component {
     })
   }
 
-  onSubmit = (event) => {
-    event.preventDefault()
+  onSubmit = (e) => {
+    e.preventDefault()
 
     console.log("onSubmit:", this.state)
 
@@ -38,13 +38,10 @@ class EntryFormContainer extends Component {
       content: this.state.content}) 
 
     this.setState({
-      title: "",
-      content: "",
+      // title: "",
+      // content: "",
       redirect: true
     })
-    //use history.push 
-    //change the createEntry 
-
   }
 
   render() {  
@@ -54,16 +51,12 @@ class EntryFormContainer extends Component {
     
     return (
       <EntryForm title={title} content={content} onSubmit={this.onSubmit} onChange={this.onChange} />
-      )
+    )
   }
 }
-//how do I add, return to entries upon submit? DONE though redirect boolean 
- //how do I best solve the async problem -- 
-
 
 const mapStateToProps = state => {
   return {
-
     entries: state.entryFormReducer.entries
   }
 }
@@ -73,3 +66,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntryFormContainer);
+

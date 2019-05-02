@@ -1,7 +1,6 @@
 class Entry < ApplicationRecord
-  # belongs_to :user
-  # validates :title, :content, :public, presence: true
+  belongs_to :user
+  validates :title, :content,  presence: true
+  # validates :public, presence: true
 end
 
-
-# length: { maximum: 500 

@@ -29,6 +29,10 @@ class EntriesContainer extends Component {
     // this.props.fetchUser()  
   }
 
+  // shouldComponentUpdate = (nextProps, nextState) => { 
+  //   const shouldUpdate = this.props.status !== nextProps.status;
+  //   return shouldUpdate;
+  // }
   //componentWillReceiveProps
   //or use handleDelete around deleteEntry, or use setInterval (too hacky?)
   // handleDelete =() => {
