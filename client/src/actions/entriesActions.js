@@ -68,6 +68,62 @@ export const deleteEntry = (entry) => {
     .catch(err => err) 
   }
 }
+
+//UPDATE ENTRY 
+export const editEntry = (entry) => {
+  const data = {
+    method: "PATCH",
+    mode: "cors",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+    // },
+    //  body: JSON.stringify(data),
+  }
+
+  console.log("entry:", entry)
+
+  return dispatch => {
+    // fetch(`${baseUrl}/entries/${entry}`, data)
+    fetch(`${ url }/${entry}`, data)
+    .then(console.log("got past fetch. entry.id:", entry))
+    .then(console.log("url:", `${url}/${entry}`))
+    .then(response => response.json())
+    .then(console.log("got past response.json"))
+    .then(entry => 
+        dispatch({
+          type: "EDIT_ENTRY",
+          payload: entry
+      }))
+    
+
+    .then(console.log("got past the dispatch. editEntry:", entry)) 
+    // -- works, I can see the proper payload 
+    .catch(err => err) 
+  }
+}
+
+sample code: 
+const ADD_TODO = 'ADD_TODO'
+const REMOVE_TODO = 'REMOVE_TODO'
+const UPDATE_TODO = 'UPDATE_TODO'
+
+const addEntry = (entry) => ({
+  type: ADD_TODO, 
+  text
+})
+const removeEntry = (id) => ({
+  type: REMOVE_ENTRY,
+  id
+})
+
+const updateEntry = (id, text) => ({
+  type: UPDATE_TODO,
+  id,
+  text
+})}
+
  // console.log("got past the dispatch. deletedEntry:", entry) 
 //then have to rerender page... 
 //debug: it's catching the entry.id #. what should happen next -- does it get to reducer? 
@@ -96,3 +152,4 @@ export const deleteEntry = (entry) => {
 //     .catch(err => err) 
 //  }
 // }
+

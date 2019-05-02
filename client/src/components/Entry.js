@@ -11,13 +11,15 @@ const Entry = (props) => {
       <li>
           <p> {entry.title} : <br/>{entry.content} </p>
           <button onClick={ () => deleteEntry(entry.id) }>Delete </button> 
-          <button onClick={ () => editEntry(entry) }>Edit </button>       
+          <button onClick={ () => editEntry(entry.id) }>Edit </button>       
       </li>
       <br/>
     </div>
   );
 }
 export default Entry;
+
+//onClick={() => this.props.dispatch({ type: 'DELETE_POST', id:this.props.post.id})}
 //add feature: LIMIT= 10, then MORE button
 //limit url == ?limit=${PER_PAGE} const PER_PAGE= 20 
 

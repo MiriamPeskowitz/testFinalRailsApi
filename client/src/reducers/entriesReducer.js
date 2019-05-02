@@ -32,14 +32,19 @@ export default function entriesReducer(
         
       }
 
-
-
-    // case 'EDIT_ENTRY':
-    //   console.log("got to edit entries in reducer")
-    //   return {
-    //     state.entries.map(entry => entry.id === action.entry.id) ?
-    //        action.payload : entry;  
-    //   }
+  //   case "EDIT_ENTRY":
+  //     console.log("got to edit entries in reducer")
+  //     return {
+  //       state.entries.map(entry =>  {
+  //         if (entry.id === action.payload.id)
+  //         return { 
+  //           ...entry,
+  //           ...action.payload.entry, 
+  //         redirect: true  
+  //       }
+  //     }
+  //     return {...entry}
+  //     )}
 
     default: 
       return state;  
