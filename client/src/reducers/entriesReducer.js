@@ -27,7 +27,7 @@ export default function entriesReducer(
      
       return {
         ...state,
-        entries: state.entries.filter(entry => entry.id !== action.payload.entry.id),
+        entries: state.entries.filter(entry => entry.id !== action.entry.id),
         redirect: true
         
       }
