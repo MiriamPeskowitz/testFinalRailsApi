@@ -38,7 +38,7 @@ export default function entriesReducer(
    //      const editedEntry = state.entries.find(entry => entry.id === action.id
    //        )
    //      entry.text = action.text
-   //      return n
+   //      return editedEntry
    
    // ...action.payload.entry, 
   //         redirect: true  

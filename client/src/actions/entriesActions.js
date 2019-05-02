@@ -72,7 +72,7 @@ export const deleteEntry = (entry) => {
 export const editEntry = (entry) => {
   const data = {
     method: "PATCH",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -86,16 +86,16 @@ export const editEntry = (entry) => {
   return dispatch => {
     // fetch(`${baseUrl}/entries/${entry}`, data)
     fetch(`${ url }/${entry}`, data)
-    .then(console.log("got past fetch. entry.id:", entry))
+    .then(console.log("got past edit fetch. entry.id:", entry))
     .then(console.log("url:", `${url}/${entry}`))
     .then(response => response.json())
-    .then(console.log("got past response.json"))
+    .then(console.log("got past edit response.json"))
     .then(entry => 
         dispatch({
           type: "EDIT_ENTRY",
           payload: entry
       }))
-    .then(console.log("got past the dispatch. editEntry:", entry)) 
+    .then(console.log("got past the edit-Entry dispatch. editEntry:", entry)) 
     .catch(err => err) 
   }
 }

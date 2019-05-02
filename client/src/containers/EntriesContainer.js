@@ -30,7 +30,7 @@ class EntriesContainer extends Component {
   }
 
   //componentWillReceiveProps
-  //or
+  //or use handleDelete around deleteEntry, or use setInterval (too hacky?)
   // handleDelete =() => {
     // this.props.deleteEntry;
     // this.state
@@ -48,6 +48,8 @@ class EntriesContainer extends Component {
     );
   }
 }  
+
+//feature: to make edit work, it needs handleEdit/open up a form/similar to EntryForm -- update. looks like the action/fetch is working 
 
 const mapStateToProps = state => {
   return {
