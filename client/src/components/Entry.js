@@ -9,7 +9,9 @@ const Entry = (props) => {
   return (
     <div>
       <li>
-          <p> {entry.title} : <br/>{entry.content} </p>
+          <p> {entry.title}: <br/>{entry.content} 
+          ({entry.user_id})
+          </p>
           <button onClick={ () => deleteEntry(entry.id) }>Delete </button> 
           <button  onClick={ () => editEntry(entry.id) } style={{ color: 'gray' }}>Edit </button>       
       </li>
@@ -17,7 +19,13 @@ const Entry = (props) => {
     </div>
   );
 }
+
+Entry.defaultProps = {
+  title: "Loading"
+}
 export default Entry;
+          //how do I get the name here instead of the user_id? 
+
 
 //onClick={() => this.props.dispatch({ type: 'DELETE_POST', id:this.props.post.id})}
 //add feature: LIMIT= 10, then MORE button

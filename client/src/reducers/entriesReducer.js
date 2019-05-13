@@ -2,7 +2,7 @@ export default function entriesReducer(
   state = {
     loading: false,
     entries: [], 
-    redirect: ""
+    redirect: ''
   }, action) {
 
   // console.log("got to entries reducer action.type", state)
@@ -14,7 +14,7 @@ export default function entriesReducer(
 
     case "FETCH_ALL_ENTRIES":
       
-      console.log("got to fetch all entries in reducer")
+    console.log("got to fetch all entries in reducer")
       
       return {
         // loading: false,
@@ -22,15 +22,27 @@ export default function entriesReducer(
         entries: action.payload
       };
 
-    case "DELETE_ENTRY":
-        console.log("got to delete entries in reducer")
+
+    case "CREATE_ENTRY":
+     
+    console.log("Create_Entry action.payload:", action.payload)
      
       return {
-        ...state,
-        entries: state.entries.filter(entry => entry.id !== action.entry.id),
-        redirect: true
-        
+        ...state, 
+      entries: [ ...state.entries, action.payload.entries ]
       }
+
+    case "DELETE_ENTRY":
+        console.log("got to delete entries in reducer");
+     
+        const entries = state.entries.filter(entry => entry.id !== action.entry.id);
+  
+        return { entries }
+        
+    default: 
+      return state;  
+  }
+};
 //something like this 
    //  case "EDIT_ENTRY":
    //    console.log("got to edit entries in reducer")
@@ -47,10 +59,7 @@ export default function entriesReducer(
   //     return {...entry}
   //     )}
 
-    default: 
-      return state;  
-  }
-};
+   
 
 
 // add 'CREATE_ENTRY'  'UPDATE_ENTRY' 'DELETE_ENTRY'

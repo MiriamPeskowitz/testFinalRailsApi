@@ -19,6 +19,11 @@ const EntryForm = (props) => {
             <label htmlFor="content">Entry: <textarea rows="5" cols= "50" name="content" onChange={ (event) => props.onChange(event) } value= { props.content } ></textarea></label>
         
             <br/>
+
+            {/*
+           <label htmlFor="name">Name: <textarea rows="1" cols= "50" name="name" onChange={ (e) => props.onChange(e) } value= { props.users.name } ></textarea></label>
+      
+          <br/>*/}
             <button type="submit">Add </button>
 
           </fieldset>

@@ -5,8 +5,7 @@ import entryFormReducer from './entryFormReducer';
 
  const rootReducer = combineReducers({
   entriesReducer, 
-  entryFormReducer,
-  userReducer,
+  userReducer
 });
 
 export default rootReducer

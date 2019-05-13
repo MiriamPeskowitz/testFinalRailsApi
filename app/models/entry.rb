@@ -1,5 +1,5 @@
 class Entry < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
   # validates :title, :content, :public, presence: true
 end
 

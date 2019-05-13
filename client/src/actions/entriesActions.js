@@ -29,6 +29,33 @@ export function fetchAllEntries(){
   }  
 }
 
+//CREATE NEW ENTRY
+export const createEntry = newEntry => {
+  let data = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify( newEntry )
+  }
+  console.log("ENTRYFORM actions:",newEntry)
+  
+  return dispatch => {
+    fetch(url, data)
+      .then(console.log(data))
+      .then(response => response.json())
+      // 
+      .then(newEntry => {
+        dispatch({
+        type: 'CREATE_ENTRY',
+        payload: newEntry
+        })
+      })
+      .catch(err => err)
+    }
+}
+
 //DELETE ENTRY 
 export const deleteEntry = (entry) => {
   const data = {
@@ -45,12 +72,11 @@ export const deleteEntry = (entry) => {
   console.log("entry:", entry)
 
   return dispatch => {
-    // fetch(`${baseUrl}/entries/${entry}`, data)
     fetch(`${ url }/${entry}`, data)
-    .then(console.log("got past fetch. entry.id:", entry))
-    .then(console.log("url:", `${url}/${entry}`))
-    .then(response => response.json())
-    .then(console.log("got past response.json"))
+    // .then(console.log("got past fetch. entry.id:", entry))
+    // .then(console.log("url:", `${url}/${entry}`))
+    // .then(response => response.json())
+    // .then(console.log("got past response.json"))
     .then(entry => 
         dispatch({
           type: "DELETE_ENTRY",

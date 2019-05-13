@@ -64,7 +64,7 @@ class EntryFormContainer extends Component {
 const mapStateToProps = state => {
   return {
 
-    entries: state.entryFormReducer.entries
+    entries: state.entriesReducer.entries
   }
 }
 

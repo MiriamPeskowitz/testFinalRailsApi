@@ -9,7 +9,8 @@ const Entries = (props) => {
 
   const entriesList = entries.map((entry) => {
     return (
-      <Entry entry={entry}
+      <Entry 
+        entry={entry}
         deleteEntry={ deleteEntry }
         editEntry={ editEntry }
         key= {entry.id}
@@ -25,5 +26,9 @@ const Entries = (props) => {
     </div>
   );
 }  
+
+Entries.defaultProps = {
+  entry: 'Loading'
+}
 
 export default Entries;
