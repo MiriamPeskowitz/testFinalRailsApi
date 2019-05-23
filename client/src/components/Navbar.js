@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
+//note: Navlink allows styling 
 
 const link = {
   width: '100px',

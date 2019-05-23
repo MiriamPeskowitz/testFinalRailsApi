@@ -18,7 +18,9 @@ function AppRouter() {
     <Router> 
       <div>      
         <Navbar/>
-        <Route path='/' component={Home} />
+      {/*add <Switch></Swithch to wrap around Routes? first route that matches, 
+      Also, explain when to use exact and when not */}
+        <Route exact path='/' component={Home} />
         <Route exact path='/story' component={Story} />
         <Route exact path='/entries' component={EntriesContainer} />
         <Route exact path='/entries/new' component={EntryFormContainer} />
