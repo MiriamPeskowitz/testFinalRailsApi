@@ -14,7 +14,7 @@ export default function entriesReducer(
 
     case "FETCH_ALL_ENTRIES":
       
-    console.log("got to fetch all entries in reducer")
+      console.log("got to fetch all entries in reducer")
       
       return {
         // loading: false,
@@ -25,7 +25,7 @@ export default function entriesReducer(
 
     case "CREATE_ENTRY":
      
-    console.log("Create_Entry action.payload:", action.payload)
+      console.log("Create_Entry action.payload:", action.payload)
      
       return {
         ...state, 

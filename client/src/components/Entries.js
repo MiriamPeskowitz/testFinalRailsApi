@@ -1,20 +1,29 @@
 import React from 'react';
 import Entry from './Entry';
+//do I need to import deleteEntry and editEntry? 
 
 const listStyle = {
     listStyle: 'none'
   }
+
+// If these are in EntriesContainer, do I need to call them as props, or is it automatic? 
+
+//  <Entries 
+//           entries={entries} 
+//           deleteEntry={deleteEntry} 
+//           editEntry={editEntry}/>
+
 const Entries = (props) => {
   const {entries, deleteEntry, editEntry} = props;
 
   const entriesList = entries.map((entry) => {
     return (
       <Entry 
-        entry={entry}
+        key={ entry.id }
+        entry={ entry }
         deleteEntry={ deleteEntry }
         editEntry={ editEntry }
-        key= {entry.id}
-        />
+       />     
     )
   });
     
@@ -27,8 +36,8 @@ const Entries = (props) => {
   );
 }  
 
-Entries.defaultProps = {
-  entry: 'Loading'
-}
+// Entries.defaultProps = {
+//   entry: 'Loading'
+// }
 
 export default Entries;

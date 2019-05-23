@@ -1,16 +1,16 @@
 // //put the whole thing here and then learn to refactor into components 
 
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import React, { Component } from 'react';
+// import { connect } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 // import '../App.css';
 // import  { createUser } from '../actions/userActions';
 // import { Signup } from '../components/Signup'
 
 // const violet = {color: 'violet'}
 
-class UsersContainer extends Component {
+// class UsersContainer extends Component {
   // constructor() {
   //   super()
 
@@ -45,8 +45,8 @@ class UsersContainer extends Component {
 //     })
 //   }
 
-     render() { 
-    return
+    //  render() { 
+    // return
 //     // <Signup />
 
 //     const { name, email } = this.state
@@ -72,14 +72,14 @@ class UsersContainer extends Component {
 //       </form> 
    
 //     )
-   }
-} 
+//    }
+// } 
 
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  // createUser
-}, dispatch)
+// const mapDispatchToProps = dispatch => bindActionCreators({
+//   // createUser
+// }, dispatch)
 
-export default connect(null, mapDispatchToProps)(UsersContainer);
+// export default connect(null, mapDispatchToProps)(UsersContainer);
 
 //              
