@@ -17,14 +17,13 @@ const red = {
 
 
 class EntriesContainer extends Component {
-  constructor() {
-    super();  
-    this.state = ({
+    
+    state = ({
       redirect: ''
     })
- }
+ 
   
-  componentDidMount() {
+  componentDidMount = () =>  {
     this.props.fetchAllEntries() 
   }
 
