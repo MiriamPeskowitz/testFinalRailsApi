@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 
 import Entries from '../components/Entries'
+import Entry from '../components/Entry';
 import NewEntryLink from '../components/NewEntryLink'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
@@ -28,19 +29,18 @@ class EntriesContainer extends Component {
   }
 
   render() {  
-    const { entries, deleteEntry, editEntry } = this.props;
+    const { entries } = this.props;
+
     return (
       <div>
         <h2 style={red}> Entries </h2>
 
         <NewEntryLink />
-  
-        <Entries 
-          entries={entries} 
-          deleteEntry={deleteEntry} 
-          editEntry={editEntry}
-          />
-        
+    
+        { entries.map(entry => 
+          <Entry key={entry.id } entry={entry} deleteEntry={deleteEntry}editEntry={editEntry} />) }
+          
+      
         <NewEntryLink />
        
       </div>
@@ -60,8 +60,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   fetchAllEntries,
   deleteEntry, 
   editEntry
-  // ,
-  // editEntry
-}, dispatch)
+  }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 

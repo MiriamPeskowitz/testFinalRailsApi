@@ -1,18 +1,14 @@
 import React from 'react';
 
-const Entry = (props) => {
-  const {entry, deleteEntry, editEntry} = props; 
+const Entry = ({ entry: {title, content}, key, deleteEntry, editEntry}) =>
  
-  return (
-      <li key={entry.id}>   
-          <p>{entry.title}: <br/> {entry.content}</p>
-            <button onClick={ () => deleteEntry(entry.id) }>Delete </button> 
-            <button onClick={ () => editEntry(entry.id) } style={{ color: 'gray' }}>Edit </button>      
-      </li>
-  );
-}
+  <div>    
+    <p>{title}: <br/> {content}</p>
+    <button onClick={ () => deleteEntry({key}) }>Delete </button> 
+    <button onClick={ () => editEntry({key}) } style={{ color: 'gray' }}>Edit </button>      
+  </div>
 
-// key={entry.id} -- removd and put into entries 
+
 // Entry.defaultProps = {
 //   title: "Loading"
 // }
