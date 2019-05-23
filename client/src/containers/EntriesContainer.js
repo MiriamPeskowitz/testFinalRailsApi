@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 
 import Entries from '../components/Entries'
+import NewEntryLink from '../components/NewEntryLink'
 // import EntryForm from '../components/EntryForm'
 import  { fetchAllEntries } from '../actions/entriesActions';
 import  { deleteEntry, editEntry} from '../actions/entriesActions';
@@ -18,11 +19,10 @@ const red = {
 
 class EntriesContainer extends Component {
     
-    state = ({
+  state = ({
       redirect: ''
     })
  
-  
   componentDidMount = () =>  {
     this.props.fetchAllEntries() 
   }
@@ -32,12 +32,17 @@ class EntriesContainer extends Component {
     return (
       <div>
         <h2 style={red}> Entries </h2>
-        <Link to='/entries/new' style={red}> New Entry </Link>
+
+        <NewEntryLink />
+  
         <Entries 
           entries={entries} 
           deleteEntry={deleteEntry} 
-          editEntry={editEntry}/>
-        <Link to='/entries/new' style={red}> Read to add a new entry? </Link>
+          editEntry={editEntry}
+          />
+        
+        <NewEntryLink />
+       
       </div>
     );
   }
