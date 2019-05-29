@@ -3,56 +3,60 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux'
 
-import Entries from '../components/Entries'
+// import Entries from '../components/Entries';
 import Entry from '../components/Entry';
 import NewEntryLink from '../components/NewEntryLink'
 // import EntryForm from '../components/EntryForm'
-import  { fetchAllEntries } from '../actions/entriesActions';
-import  { deleteEntry, editEntry} from '../actions/entriesActions';
-// import { createBrowserHistory } from 'history';
+
+import  { fetchAllEntries, deleteEntry, editEntry } from '../actions/entriesActions';
+
+
 const red = {
     color: '#cd5c5c'
   }
 
 
 class EntriesContainer extends Component {
-    
-  state = ({
-      redirect: ''
-    })
  
-  componentDidMount = () =>  {
-    this.props.fetchAllEntries() 
+  componentDidMount = (props) => {
+    this.props.fetchAllEntries(); 
+    console.log("entries fetched", this.props.entries)
   }
-
+ 
+debugger
   render() {  
-    const { entries } = this.props;
-
     return (
       <div>
         <h2 style={red}> Entries </h2>
 
         <NewEntryLink />
-    
-        { entries.map(entry => 
-          <Entry key={entry.id } entry={entry} deleteEntry={deleteEntry}editEntry={editEntry} />) }
-          
       
-        <NewEntryLink />
+       {this.props.entries.map(entry => (
+       
+          <Entry 
+            key={entry.id } 
+            entry={entry} 
+            deleteEntry={this.props.deleteEntry} 
+            editEntry={this.props.editEntry} />
+    
+          )) 
+        } 
+
+      <NewEntryLink />
        
       </div>
-    );
-  }
-}  
+    )
+  };
+} 
+
 
 //feature: to make edit work, it needs handleEdit/open up a form/similar to EntryForm -- update. looks like the action/fetch is working 
 
 const mapStateToProps = state => {
   return {
-    entries: state.entriesReducer.entries
+    entries: state.entries
   }
 }
 

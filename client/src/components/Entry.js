@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Entry = ({ entry: {title, content}, key, deleteEntry, editEntry}) =>
+const Entry = ({ entry: {title, content, id}, deleteEntry, editEntry}) =>
  
   <div>    
     <p>{title}: <br/> {content}</p>
-    <button onClick={ () => deleteEntry({key}) }>Delete </button> 
-    <button onClick={ () => editEntry({key}) } style={{ color: 'gray' }}>Edit </button>      
+    <button onClick={ () => deleteEntry({id}) }>Delete </button> 
+    <button onClick={ () => editEntry({id}) } style={{ color: 'gray' }}>Edit </button>      
   </div>
 
 

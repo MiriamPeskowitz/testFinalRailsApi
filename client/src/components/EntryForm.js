@@ -4,7 +4,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-
 const EntryForm = (props) => {
   const red = {color: '#cd5c5c'}
   return (
@@ -20,10 +19,11 @@ const EntryForm = (props) => {
         
             <br/>
 
-            {/*
+            {/*add name 
            <label htmlFor="name">Name: <textarea rows="1" cols= "50" name="name" onChange={ (e) => props.onChange(e) } value= { props.users.name } ></textarea></label>
       
           <br/>*/}
+          
             <button type="submit">Add </button>
 
           </fieldset>
