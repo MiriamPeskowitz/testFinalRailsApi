@@ -20,12 +20,22 @@ const red = {
 
 class EntriesContainer extends Component {
  
-  componentDidMount = (props) => {
+  componentDidMount = () => {
     this.props.fetchAllEntries(); 
     console.log("entries fetched", this.props.entries)
   }
- 
-debugger
+  
+  renderEntries = this.props.entries.map(entry => (
+       
+    <Entry 
+      key={entry.id } 
+      entry={entry} 
+      deleteEntry={this.props.deleteEntry} 
+      editEntry={this.props.editEntry} />
+
+    )
+  ) 
+    
   render() {  
     return (
       <div>
@@ -33,16 +43,7 @@ debugger
 
         <NewEntryLink />
       
-       {this.props.entries.map(entry => (
-       
-          <Entry 
-            key={entry.id } 
-            entry={entry} 
-            deleteEntry={this.props.deleteEntry} 
-            editEntry={this.props.editEntry} />
-    
-          )) 
-        } 
+       {this.renderEntries}
 
       <NewEntryLink />
        
@@ -60,10 +61,13 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchAllEntries,
-  deleteEntry, 
-  editEntry
-  }, dispatch)
+const mapDispatchToProps = dispatch => {
+  bindActionCreators({
+    fetchAllEntries: fetchAllEntries,
+    deleteEntry, 
+    editEntry
+  }, dispatch
+  );
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
