@@ -17,38 +17,28 @@ const red = { color: '#cd5c5c'}
 
 class EntriesContainer extends Component {
  
-  componentDidMount = () => fetchAllEntries();  
-
-  renderEntries = this.props.entries.map(entry => (
-       
-    <Entry 
-      key={entry.id } 
-      entry={entry} 
-      deleteEntry={this.props.deleteEntry} 
-      editEntry={this.props.editEntry} />
-
-    )
-  ) 
+  componentDidMount () {
+    this.props.fetchAllEntries();  
+  }  
 
   render() {  
+    const {entries} = this.props; 
+
     return (
       <div>
         <h2 style={red}> Entries </h2>
 
         <NewEntryLink />
       
-       {this.renderEntries}
-     
+    
+        { entries.map(entry => <Entry key={entry.id } entry={entry}deleteEntry={this.props.deleteEntry} editEntry={this.props.editEntry} />) }
 
       <NewEntryLink />
        
       </div>
-    )
-  };
+    ); 
+  }
 } 
-
-
-//feature: to make edit work, it needs handleEdit/open up a form/similar to EntryForm -- update. looks like the action/fetch is working 
 
 const mapStateToProps = state => {
   return {
@@ -56,11 +46,10 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({
-    fetchAllEntries: fetchAllEntries,
-    deleteEntry: deleteEntry,
-    editEntry: editEntry
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchAllEntries,
+    deleteEntry,
+    editEntry,
     }, dispatch)
 
 

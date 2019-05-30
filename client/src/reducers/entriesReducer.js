@@ -8,36 +8,25 @@ export default function entriesReducer(
   console.log("got to entries reducer action.type", state)
   
   switch(action.type) {
-  
-    // case "LOADING_ENTRIES":
-    //   return {...state,  loading: true };
 
-    case 'FETCH_ALL_ENTRIES':
-      
-      console.log("got to fetch all entries in reducer")
-  
-      return {
-        // loading: false,
-        ...state, 
-        entries: action.payload
-      };
+    case 'FETCH_ALL_ENTRIES':  
+      console.log("got to fetch all entries in reducer")  
+      return {  ...state, entries: action.payload };
 
+//find correct code for the reducers 
 
-    case "CREATE_ENTRY":
-     
+    case "CREATE_ENTRY":   
       console.log("Create_Entry action.payload:", action.payload)
+      return { ...state, entries: [...state.entries, action.payload.entries ]  }
+        //or action.payload
      
-      return {
-        ...state, 
-      entries: [ ...state.entries, action.payload.entries ]
-      }
 
     case "DELETE_ENTRY":
-        console.log("got to delete entries in reducer");
-     
-        const entries = state.entries.filter(entry => entry.id !== action.entry.id);
+      console.log("got to delete entries in reducer");
+      return { ...state, entries: state.entries.filter(entry => entry.id !== action.payload.id)}
+        // const entries = state.entries.filter(entry => entry.id !== action.payload);
   
-        return { entries }
+        // return { entries }
         
     default: 
       return state;  
