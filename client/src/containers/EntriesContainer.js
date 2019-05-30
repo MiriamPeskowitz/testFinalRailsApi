@@ -5,15 +5,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
-// import Entries from '../components/Entries';
 import Entry from '../components/Entry';
 import NewEntryLink from '../components/NewEntryLink'
-// import EntryForm from '../components/EntryForm'
+import  {  fetchAllEntries, deleteEntry, editEntry } from '../actions/entriesActions';
 
-import  { fetchAllEntries, deleteEntry, editEntry } from '../actions/entriesActions';
-
-
-const red = { color: '#cd5c5c'}
+const red = { color: '#cd5c5c'};
 
 class EntriesContainer extends Component {
  
@@ -21,9 +17,7 @@ class EntriesContainer extends Component {
     this.props.fetchAllEntries();  
   }  
 
-  render() {  
-    const {entries} = this.props; 
-
+  render() { 
     return (
       <div>
         <h2 style={red}> Entries </h2>
@@ -31,12 +25,13 @@ class EntriesContainer extends Component {
         <NewEntryLink />
       
     
-        { entries.map(entry => <Entry key={entry.id } entry={entry}deleteEntry={this.props.deleteEntry} editEntry={this.props.editEntry} />) }
+        { this.props.entries.map(entry => <Entry key={entry.id } entry={entry}deleteEntry={this.props.deleteEntry} editEntry={this.props.editEntry} />) }
 
       <NewEntryLink />
        
       </div>
     ); 
+
   }
 } 
 
@@ -54,3 +49,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
+
