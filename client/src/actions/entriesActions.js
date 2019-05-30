@@ -17,7 +17,7 @@ export function fetchAllEntries(){
     //   payload: true
     // });
 
-    return fetch(url, data)
+  return fetch(url, data)
     .then(response => response.json())
     .then(entries =>  dispatch({
         type: 'FETCH_ALL_ENTRIES', 
@@ -75,10 +75,10 @@ export const deleteEntry = (entry) => {
     // .then(console.log("url:", `${url}/${entry}`))
     // .then(response => response.json())
     // .then(console.log("got past response.json"))
-    .then(entry => 
+    .then(deletedEntry => 
         dispatch({
           type: "DELETE_ENTRY",
-          payload: entry
+          payload: deletedEntry
       }))
     // .then(entries =>  
     //   dispatch({

@@ -32,3 +32,9 @@ function AppRouter() {
 }
 
 export default AppRouter;
+
+  // <Route exact path='/' render={ () =>  loggedIn() ? <TodoList/> : <Redirect to="/login"/> }/>
+  //     <Route path='/signup' component={ () => loggedIn() ? <Redirect to="/"/> : <Signup/> }/>
+  //     <Route path='/login' component={ () => loggedIn() ? <Redirect to="/"/> : <Login/> }/>
+  //     <Route path='/logout' component={ () => logout() }/>
+  //     <Route path='/todos' component={ () =>  loggedIn() ? <TodoList/> : <Redirect to="/login"/> }/>

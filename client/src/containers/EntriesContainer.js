@@ -13,18 +13,12 @@ import NewEntryLink from '../components/NewEntryLink'
 import  { fetchAllEntries, deleteEntry, editEntry } from '../actions/entriesActions';
 
 
-const red = {
-    color: '#cd5c5c'
-  }
-
+const red = { color: '#cd5c5c'}
 
 class EntriesContainer extends Component {
  
-  componentDidMount = () => {
-    this.props.fetchAllEntries(); 
-    console.log("entries fetched", this.props.entries)
-  }
-  
+  componentDidMount = () => fetchAllEntries();  
+
   renderEntries = this.props.entries.map(entry => (
        
     <Entry 
@@ -35,7 +29,7 @@ class EntriesContainer extends Component {
 
     )
   ) 
-    
+
   render() {  
     return (
       <div>
@@ -44,6 +38,7 @@ class EntriesContainer extends Component {
         <NewEntryLink />
       
        {this.renderEntries}
+     
 
       <NewEntryLink />
        
@@ -57,17 +52,16 @@ class EntriesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    entries: state.entries
+    entries: state.entriesReducer.entries
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch =>
   bindActionCreators({
     fetchAllEntries: fetchAllEntries,
-    deleteEntry, 
-    editEntry
-  }, dispatch
-  );
-};
+    deleteEntry: deleteEntry,
+    editEntry: editEntry
+    }, dispatch)
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(EntriesContainer); 
