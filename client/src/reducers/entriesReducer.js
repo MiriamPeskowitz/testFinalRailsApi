@@ -5,12 +5,12 @@ export default function entriesReducer(
     redirect: ''
   }, action) {
 
-  console.log("got to entries reducer action.type", state)
+  // console.log("got to entries reducer action.type", state)
   
   switch(action.type) {
 
     case 'FETCH_ALL_ENTRIES':  
-      console.log("got to fetch all entries in reducer")  
+      console.log("got to fetch all entries in reducer",  action.payload)  
       return {  ...state, entries: action.payload };
 
 //find correct code for the reducers 

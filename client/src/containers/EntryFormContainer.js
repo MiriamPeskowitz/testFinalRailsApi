@@ -27,24 +27,22 @@ class EntryFormContainer extends Component {
       [name]: value,
     })
   }
-
+ // console.log("onSubmit:", this.state);
   onSubmit = (event) => {
     event.preventDefault()
 
-    console.log("onSubmit:", this.state)
+   debugger
 
     this.props.createEntry({
       title: this.state.title,
       content: this.state.content}) 
+  
 
     this.setState({
       title: "",
       content: "",
       redirect: true
     })
-    //use history.push 
-    //change the createEntry 
-
   }
 
   render() {  
@@ -64,7 +62,7 @@ class EntryFormContainer extends Component {
 const mapStateToProps = state => {
   return {
 
-    entries: state.entriesReducer.entries
+    entries: state.entries
   }
 }
 
