@@ -14,9 +14,9 @@ import  { fetchAllEntries, deleteEntry, editEntry } from '../actions/index';
 
 class EntriesContainer extends Component {
 
-  state = {
-    entries: []
-  }
+  // state = {
+  //   entries: []
+  // }
  // const {entries, deleteEntry, editEntry} = this.props;
 
   componentDidMount(){
@@ -26,26 +26,24 @@ class EntriesContainer extends Component {
   render() { 
     // const Entries = Array.from(this.props.entries)
     if (this.props.entries.length) {
-    return (
-
-       <div> 
-          <h4>Entries</h4>
-          <NewEntryLink />
-          {this.props.entry.map(entry => {
-            return (
-              <div key={entry.id}>
-              
-                <p>{entry.content}</p>
-              </div>
-              )
-          })}
-        </div>
-        )
-  } else {
-    return (<div> no Entries <br/>
-        <NewEntryLink />
-    </div>)
+      return (
+         <div> 
+            <h4>Entries</h4>
+            <NewEntryLink />
+            {this.props.entries.map(entry => {
+              return (
+                <div key={entry.id}>
+                
+                  <p>{entry.content}</p>
+                </div>
+                )
+            })}
+          </div>
+      )
+    } else {
+      return <div> no Entries <br/> </div>  
     } 
+     // <NewEntryLink />
   }
 }
  

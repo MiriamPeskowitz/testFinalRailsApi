@@ -21,15 +21,17 @@ export const fetchAllEntries = () => {
   }
   return (dispatch) => { 
     fetch(url, data)
-    // .then(response => response.json)
-    .then(response => { dispatch({
+    .then(response => response.json())
+    .then(entries => 
+      dispatch({
         type: FETCH_ALL_ENTRIES, 
-        entries: response.data
+        payload: entries
       })
-    })
+    )
     .catch(err => err);
   };  
 };
+
 
 // .then(response => response.json())
 //       .then(entries =>  dispatch {

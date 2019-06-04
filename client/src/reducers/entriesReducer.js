@@ -3,9 +3,9 @@ import {  FETCH_ALL_ENTRIES, CREATE_ENTRY, DELETE_ENTRY } from '../actions';
 //add EDIT_ENTRY
 
 export default function entriesReducer(state = {
-    loading: false,
-    entries: [], 
-    redirect: ''
+    // loading: false,
+    entries: [] 
+    // redirect: ''
   }, action) {
 
   // console.log("got to entries reducer action.type", state)
@@ -14,7 +14,7 @@ export default function entriesReducer(state = {
 
     case FETCH_ALL_ENTRIES:  
    
-      return {...state, entries: action.payload };
+      return { ...state, entries: action.payload };
 
       // return { ...state, entries: action.payload };
       // console.log("got to fetch all entries in reducer",  action.payload)  
