@@ -13,24 +13,24 @@ import  { fetchAllEntries, deleteEntry, editEntry } from '../actions/index';
 // const red = { color: '#cd5c5c'};
 
 class EntriesContainer extends Component {
-
+//DO I NEED STATE HERE? ALL CONFUSED. SEEMS LIKE NO? 
   // state = {
   //   entries: []
   // }
- // const {entries, deleteEntry, editEntry} = this.props;
 
   componentDidMount(){
-    this.props.fetchAllEntries();  
+    fetchAllEntries();  
   }  
  
   render() { 
+    const {entries, fetchAllEntries, deleteEntry, editEntry} = this.props;
     // const Entries = Array.from(this.props.entries)
-    if (this.props.entries.length) {
+    if (entries.length) {
       return (
          <div> 
             <h4>Entries</h4>
             <NewEntryLink />
-            {this.props.entries.map(entry => {
+            {entries.map(entry => {
               return (
                 <div key={entry.id}>
                 
