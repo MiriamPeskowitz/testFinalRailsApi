@@ -1,33 +1,27 @@
+// import React from 'react';
+// import Entry from './Entry';
+// import NewEntryLink from './NewEntryLink'
+// import  {  deleteEntry, editEntry } from '../actions/entriesActions';
+// const red = { color: '#cd5c5c'};
+ 
 
+// const Entries = (props) => {
+//   const {entries, deleteEntry, editEntry} = this.props;
 
+//     <div>
+//       <h2 style={red}> Entries </h2>
 
+//       <NewEntryLink />
 
-//refactored into entriesContainer and Entry
+//       {entries.map(entry => {
+//         <Entry key={entry.id } entry={entry} deleteEntry={deleteEntry} editEntry={editEntry} />
+//         })
+//        }  
 
-import React from 'react';
-import Entry from './Entry';
-import NewEntryLink from './NewEntryLink'
-import  {  deleteEntry, editEntry } from '../actions/entriesActions';
-const red = { color: '#cd5c5c'};
-  debugger
-
-const Entries = (props) => {
-  const {entries, deleteEntry, editEntry} = this.props;
-
-    <div>
-      <h2 style={red}> Entries </h2>
-
-      <NewEntryLink />
-
-      {entries.map(entry => {
-        <Entry key={entry.id } entry={entry} deleteEntry={deleteEntry} editEntry={editEntry} />
-        })
-       }  
-
-    <NewEntryLink />
+//     <NewEntryLink />
    
-    </div>
-}
+//     </div>
+// }
 
 // export default Entries;
 // const listStyle = {

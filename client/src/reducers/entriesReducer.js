@@ -1,5 +1,8 @@
-export default function entriesReducer(
-  state = {
+import {  FETCH_ALL_ENTRIES, CREATE_ENTRY, DELETE_ENTRY } from '../actions';
+
+//add EDIT_ENTRY
+
+export default function entriesReducer(state = {
     loading: false,
     entries: [], 
     redirect: ''
@@ -9,24 +12,29 @@ export default function entriesReducer(
   
   switch(action.type) {
 
-    case 'FETCH_ALL_ENTRIES':  
-      console.log("got to fetch all entries in reducer",  action.payload)  
-      return {  ...state, entries: action.payload };
+    case FETCH_ALL_ENTRIES:  
+   
+      return {...state, entries: action.payload };
+
+      // return { ...state, entries: action.payload };
+      // console.log("got to fetch all entries in reducer",  action.payload)  
+      // return {  ...state, entries: action.payload };
 
 //find correct code for the reducers 
 
-    case "CREATE_ENTRY":   
-      console.log("Create_Entry action.payload:", action.payload)
-      return { ...state, entries: [...state.entries, action.payload.entries ]  }
+    case CREATE_ENTRY:   
+      // console.log("Create_Entry action.payload:", action.payload)
+      return {...state, entries: action.payload}
+      // return { ...state, entries: [...state.entries, action.payload.entries ]  }
         //or action.payload
      
 
-    case "DELETE_ENTRY":
+    case DELETE_ENTRY:
       console.log("got to delete entries in reducer");
       return { ...state, entries: state.entries.filter(entry => entry.id !== action.payload.id)}
         // const entries = state.entries.filter(entry => entry.id !== action.payload);
   
-        // return { entries }
+    //     // return { entries }
         
     default: 
       return state;  
