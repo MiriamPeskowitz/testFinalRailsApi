@@ -1,7 +1,7 @@
 
 //user story: any user can see all the entries (in batches of 10) 
 //FETCH ENTRIES
-const url = 'http://localhost:3001/api/v1/entries';
+const url = 'http://localhost:3000/api/v1/entries';
 
 export function fetchAllEntries(){
   const data = {

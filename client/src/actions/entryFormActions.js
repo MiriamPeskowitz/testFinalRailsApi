@@ -1,4 +1,4 @@
-const url = "http://localhost:3001/api/v1/entries"
+const url = "http://localhost:3000/api/v1/entries"
 
 export const createEntry = newEntry => {
   let data = {
