@@ -20,6 +20,7 @@ class EntriesContainer extends Component {
   // }
 
   componentDidMount(){
+    console.log("got here1")
     fetchAllEntries();  
   }  
  

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# added seds in three rounds
+# added seeds in three rounds
  
  user = ["Rob", "Kisha", "Lulu", "Leo"]
 
@@ -16,8 +16,8 @@
 
 entry = ["anticipation future exhausted sick panic", "confusion human empty afraid", "dazed stunned", "crushed restless "]
 
-entry.each{ |entry| Entry.create( title: entry, content: "I'm feeling #{entry}. Anyone else feel this way?", user_id: 19, public: "yes")}
+entry.each{ |entry| Entry.create(title: entry, content: "I'm feeling #{entry}. Anyone else feel this way?", user_id: 26)}
 
 entry = ["shock", "empty", "angry", "confused and sad"]
 
-entry.each{ |entry| Entry.create( title: entry, content: "I'm feeling #{entry}. Anyone else feel this way?", user_id: 20, public: "yes")}
+entry.each{ |entry| Entry.create( title: entry, content: "I'm feeling #{entry}. Anyone else feel this way?", user_id: 27)}

@@ -12,6 +12,7 @@ export const EDIT_ENTRY = 'EDIT_ENTRY';
 const url = "http://localhost:3001/api/v1/entries";
 
 export const fetchAllEntries = () => {
+  console.log("got here2")
   const data = {
     method: 'GET',
     headers: {
@@ -21,6 +22,7 @@ export const fetchAllEntries = () => {
   }
   return (dispatch) => { 
     fetch(url, data)
+    .then(console.log("got here3"))
     .then(response => response.json())
     .then(entries => 
       dispatch({
